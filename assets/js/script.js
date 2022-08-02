@@ -1,4 +1,5 @@
 var getCocktail = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
+var getRandomCocktail = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
 
 
 var searchHandler = function (event) {
@@ -21,8 +22,13 @@ function search(userInput) {
 };
 
 function random() {
-
-
+    fetch(getRandomCocktail)
+        .then((response) => {
+            console.log(response);
+            return response.json();
+        }).then((data) => {
+            console.log("   THERE", data);
+        });
 };
 
 $("#fetchBtn").click(searchHandler);
