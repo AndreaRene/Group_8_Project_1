@@ -8,16 +8,45 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/css/resets.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
-    <title>Document</title>
+    <title>Let's get buzzy!</title>
 </head>
 
 <body>
     <header>
-        CHANGE THING TO TEST
+        <h1 class="font-bold"> Cocktails</h1> 
+        
+        <nav>
+          <ul>
+            <li><a href="#search">Cocktail Search</a></li>
+            <li><a href="#learn">Learn</a></li>
+            <li><a href="#history">History</a></li>
+          </ul>
+        </nav>
     </header>
 
     <main>
         <section>
+            <h2 class="font-bold">Begin your search for the perfect cocktail!</h2>
+            <label for="cocktails">By Cocktail Name</label>
+
+            <select name="cocktails" id="cocktails">
+
+            <option value="drink1">Drink 1</option>
+            <option value="drink2">Drink 2</option>
+            <option value="drink3">Drink 3</option>
+            <option value="drink4">Drink 4</option>
+            </select>
+
+            <div>
+                <input type="text" placeholder="Search..">
+            </div>
+
+            <button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                Buzz
+            </button>
+            <button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                Random Cocktail
+            </button>
 
         </section>
         <section>
