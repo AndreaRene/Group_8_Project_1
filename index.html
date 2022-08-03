@@ -14,7 +14,16 @@
 <body>
     <header>
 
-        <h1 class="font-bold"> Cocktails</h1> 
+
+        <h1 class="font-bold"> Cocktails</h1>
+
+        <nav>
+            <ul>
+                <li><a href="#search">Cocktail Search</a></li>
+                <li><a href="#learn">Learn</a></li>
+                <li><a href="#history">History</a></li>
+            </ul>
+      <h1 class="font-bold"> Cocktails</h1> 
         
         <nav>
           <ul>
@@ -22,6 +31,7 @@
             <li><a href="#learn">Learn</a></li>
             <li><a href="#history">History</a></li>
           </ul>
+ develop
         </nav>
     </header>
 
@@ -32,22 +42,88 @@
 
             <select name="cocktails" id="cocktails">
 
+
+                <option value="cocktailName">By Cocktail Name</option>
+                <option value="cocktailIng">By Ingredient</option>
+
             <option value="cocktailName">By Cocktail Name</option>
             <option value="cocktailIng">By Ingredient</option>
+
             </select>
 
             <div>
                 <input type="text" placeholder="Search..">
             </div>
 
+
+            <button
+                class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                Buzz
+            </button>
+            <button
+                class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+
             <button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
                 Buzz
             </button>
             <button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+
                 Random Cocktail
             </button>
 
         </section>
+
+
+
+        </header>
+
+        <main>
+
+
+            <h3>Recent Searches:</h3>
+            <ul>
+                <li>stored result 1</li>
+                <li>stored result 2</li>
+                <li>stored result 3</li>
+                <li>stored result 4</li>
+                <li>stored result 5</li>
+            </ul>
+
+            <section>
+                <h2 class="font-bold">Cocktail Name:</h2>
+                <ul>
+                    <li>Ingrient</li>
+                    <li>Ingrient</li>
+                    <li>Ingrient</li>
+                </ul>
+            </section>
+
+
+            <section>
+                <button class="btn-flat wave-effect waves-teal"> Get a Trivia Question! </button>
+                <div class="question">
+                    <!-- inserted question from JavaScript -->
+                </div>
+                <div class="answer-list">
+                    <!-- inserted answers from JavaScript -->
+                </div>
+
+            </section>
+        </main>
+
+        <aside>
+
+        </aside>
+
+        <footer>
+            <h4> Made with 🖤 by Group 8
+                Please drink responsibly
+                and happy mixing! </h4>
+
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="assets/js/script.js"></script>
 
         
     </header>
@@ -103,6 +179,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="assets/js/script.js"></script>
+
 </body>
 
 </html>
