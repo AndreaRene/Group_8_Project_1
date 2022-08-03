@@ -8,11 +8,47 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/css/resets.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
-    <title>Document</title>
+    <title>Let's get buzzy!</title>
 </head>
 
 <body>
     <header>
+
+        <h1 class="font-bold"> Cocktails</h1> 
+        
+        <nav>
+          <ul>
+            <li><a href="#search">Cocktail Search</a></li>
+            <li><a href="#learn">Learn</a></li>
+            <li><a href="#history">History</a></li>
+          </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2 class="font-bold">Begin your search for the perfect cocktail!</h2>
+            <label for="select">Select Option</label>
+
+            <select name="cocktails" id="cocktails">
+
+            <option value="cocktailName">By Cocktail Name</option>
+            <option value="cocktailIng">By Ingredient</option>
+            </select>
+
+            <div>
+                <input type="text" placeholder="Search..">
+            </div>
+
+            <button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                Buzz
+            </button>
+            <button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                Random Cocktail
+            </button>
+
+        </section>
+
         
     </header>
 
@@ -37,8 +73,23 @@
             <li>stored result 4</li>
             <li>stored result 5</li>
         </ul>
-        <section>
 
+        <section>
+            <h2 class="font-bold">Cocktail Name:</h2>
+            <ul>
+                <li>Ingrient</li>
+                <li>Ingrient</li>
+                <li>Ingrient</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 class="font-bold">Learn about your cocktail</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing 
+                elit. Ab modi facilis blanditiis porro maxime impedit 
+                unde corrupti voluptas. Maxime sunt perferendis nihil, 
+                unde distinctio quidem ea sed excepturi aspernatur consequuntur.
+            </p>
         </section>
     </main>
 
