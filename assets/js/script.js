@@ -14,22 +14,33 @@ var searchHandler = function (event) {
 function search(userInput) {
     fetch(getCocktail + userInput)
         .then((response) => {
-            console.log(response);
+            console.log("BY NAME COCKTAIL", response);
             return response.json();
         }).then((data) => {
-            console.log("HERE", data);
+            console.log("BY NAME COCKTAIL", data);
         });
 };
 
 function random() {
     fetch(getRandomCocktail)
         .then((response) => {
-            console.log(response);
+            console.log("RANDOM COCKTAIL", response);
             return response.json();
         }).then((data) => {
-            console.log("   THERE", data);
+            console.log("RANDOM COCKTAIL", data);
         });
 };
 
+function trivia() {
+    fetch("https://the-trivia-api.com/api/questions?categories=food_and_drink&limit=1&difficulty=easy&tags=alcohol,cocktails")
+        .then((response) => {
+            console.log("TRIVIA RESPONSE", response);
+            return response.json();
+        }).then((data) => {
+            console.log("TRIVIA DATA", data);
+        });
+}
+
 $("#fetchBtn").click(searchHandler);
+$("#fetchBtn").click(trivia);
 $("#fetchRandomBtn").click(random);
