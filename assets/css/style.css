@@ -16,3 +16,11 @@ body {
 /* end of universal selectors */
 
 .myBtns {}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
