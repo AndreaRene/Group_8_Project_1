@@ -8,30 +8,43 @@ var searchHandler = function (event) {
         var userInput = $("#drinkSearch").val();
         console.log(userInput);
         search(userInput);
-    } else {
+    } else if ($(this).attr("id") === "randomFetchBtn") {
         random();
+    } else {
+        trivia();
     };
 };
 
 function search(userInput) {
     fetch(getCocktail + userInput)
         .then((response) => {
-            console.log(response);
+            console.log("BY NAME COCKTAIL", response);
             return response.json();
         }).then((data) => {
-            console.log("HERE", data);
+            console.log("BY NAME COCKTAIL DATA", data);
         });
 };
 
 function random() {
     fetch(getRandomCocktail)
         .then((response) => {
-            console.log(response);
+            console.log("RANDOM COCKTAIL RESPONSE", response);
             return response.json();
         }).then((data) => {
-            console.log("THERE", data);
+            console.log("RANDOM COCKTAIL DATA", data);
+        });
+};
+
+function trivia() {
+    fetch("https://the-trivia-api.com/api/questions?categories=food_and_drink&limit=1&difficulty=easy&tags=alcohol,cocktails")
+        .then((response) => {
+            console.log("TRIVIA RESPONSE", response);
+            return response.json();
+        }).then((data) => {
+            console.log("TRIVIA DATA", data);
         });
 };
 
 $("#fetchBtn").click(searchHandler);
 $("#randomFetchBtn").click(searchHandler);
+$("#triviaBtn").click(searchHandler);
