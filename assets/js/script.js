@@ -31,6 +31,7 @@ function search(userInput) {
             return response.json();
         }).then((data) => {
             console.log("BY NAME COCKTAIL DATA", data);
+
         });
 };
 
@@ -82,7 +83,7 @@ $("#clearBtn").click(clearStorage);
 
 function clearStorage() {
     localStorage.clear();
-    location.reload();
+    $("#recentSearches").empty();
 };
 
 // on click and on load events
