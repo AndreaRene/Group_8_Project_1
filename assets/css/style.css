@@ -14,3 +14,7 @@ body {
 }
 
 /* end of universal selectors */
+.waves-effect{
+    background-color: var(--kombuGreen);
+    color: var(--earthYellow)
+}
