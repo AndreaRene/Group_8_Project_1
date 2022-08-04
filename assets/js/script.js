@@ -8,6 +8,8 @@ var searchHandler = function (event) {
         var userInput = $("#drinkSearch").val();
         console.log(userInput);
         search(userInput);
+    } else {
+        random();
     };
 };
 
@@ -27,7 +29,7 @@ function random() {
             console.log("RANDOM COCKTAIL", response);
             return response.json();
         }).then((data) => {
-            console.log("RANDOM COCKTAIL", data);
+            console.log("THERE", data);
         });
 };
 
@@ -42,5 +44,4 @@ function trivia() {
 }
 
 $("#fetchBtn").click(searchHandler);
-$("#fetchBtn").click(trivia);
-$("#fetchRandomBtn").click(random);
+$("#randomFetchBtn").click(searchHandler);

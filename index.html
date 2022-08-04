@@ -5,222 +5,113 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- || removing tailwind and adding materialize cdns || -->
+
+    <!-- || commenting out materialize to create page in plain html. uncomment when ready for styling || -->
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>Let's get buzzy!</title>
 </head>
 
 <body>
-    <header>
+    <header id="pageHeader">
+        <img src="assets/imgs/noun-martini-1113386-283618.svg" alt="martini glass with olive icon" id="martiniIcon">
+        <h1 id="cocktailMsg">Find the perfect coctail for yourself or your party.</h1>
 
+        <!-- DELETION SUGGESTION: NAV
+            || Do we need a nav section? || -->
 
-        <h1 class="font-bold"> Cocktails</h1>
-
-        <nav>
+        <!-- <nav>
             <ul>
                 <li><a href="#search">Cocktail Search</a></li>
                 <li><a href="#learn">Learn</a></li>
                 <li><a href="#history">History</a></li>
             </ul>
-
-
-            <h1 class="font-bold"> Cocktails</h1>
-
-            <nav>
-                <ul>
-                    <li><a href="#search">Cocktail Search</a></li>
-                    <li><a href="#learn">Learn</a></li>
-                    <li><a href="#history">History</a></li>
-                </ul>
-                <h1 class="font-bold"> Cocktails</h1>
-
-                <nav>
-                    <ul>
-                        <li><a href="#search">Cocktail Search</a></li>
-                        <li><a href="#learn">Learn</a></li>
-                        <li><a href="#history">History</a></li>
-                    </ul>
-                    develop
-
-                </nav>
+        </nav> -->
     </header>
 
-    <main>
-        <section>
-            <h2 class="font-bold">Begin your search for the perfect cocktail!</h2>
-            <label for="select">Select Option</label>
+    <main id="pageMain">
+        <section id="searchSection">
+            <h2>Begin your search for the perfect cocktail here!</h2>
+            <form>
+                <label for="searchCriteria">Search by:</label>
 
-            <select name="cocktails" id="cocktails">
+                <select id="searchCriteria" name="searchCriteria">
+                    <option value="Name">Cocktail Name</option>
+                    <option value="Ingredient">Ingredient</option>
+                </select>
 
-
-                <option value="cocktailName">By Cocktail Name</option>
-                <option value="cocktailIng">By Ingredient</option>
-
-
-                <option value="cocktailName">By Cocktail Name</option>
-                <option value="cocktailIng">By Ingredient</option>
-
-                <option value="cocktailName">By Cocktail Name</option>
-                <option value="cocktailIng">By Ingredient</option>
-
-
-            </select>
-
-            <div>
                 <input type="text" id="drinkSearch" placeholder="Search..">
-            </div>
 
-
-            <button
-                class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
-                id="fetchBtn">
-                Buzz
-            </button>
-            <button
-                class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
-                id="fetchRandomBtn">
-
-
-                <button
-                    class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
-                    Buzz
-                </button>
-                <button
-                    class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
-
-                    <button
-                        class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
-                        Buzz
-                    </button>
-                    <button
-                        class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
-
-
-                        Random Cocktail
-                    </button>
-
+                <button id="fetchBtn">Buzz</button>
+                <button id="randomFetchBtn">Random Cocktail</button>
+            </form>
         </section>
 
+        <!-- DELETION SUGGESTION: RECENT SEARCHES
+            this will go at the bottom and the buttons in the div will be dynamically generated -->
 
-
-
-        </header>
-
-        <main>
-
-
-            <h3>Recent Searches:</h3>
+        <!-- <h3>Recent Searches:</h3>
             <ul>
                 <li>stored result 1</li>
                 <li>stored result 2</li>
                 <li>stored result 3</li>
                 <li>stored result 4</li>
                 <li>stored result 5</li>
-            </ul>
+            </ul> -->
 
-            <section>
-                <h2 class="font-bold">Cocktail Name:</h2>
-                <ul>
-                    <li>Ingrient</li>
-                    <li>Ingrient</li>
-                    <li>Ingrient</li>
+        <section id="recipeSection">
+            <div id="recipe">
+                <h2 id="recipeName">
+                    <!-- recipe name will be dynamically generated -->
+                </h2>
+                <ul id="ingredients">
+                    <!-- ingredients list will be dynamically generated -->
                 </ul>
-            </section>
-
-
-            <section>
-                <button class="btn-flat wave-effect waves-teal"> Get a Trivia Question! </button>
-                <div class="question">
-                    <!-- inserted question from JavaScript -->
-                </div>
-                <div class="answer-list">
-                    <!-- inserted answers from JavaScript -->
-                </div>
-
-            </section>
-        </main>
-
-        <aside>
-
-        </aside>
-
-        <footer>
-            <h4> Made with 🖤 by Group 8
-                Please drink responsibly
-                and happy mixing! </h4>
-
-        </footer>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-        <script src="assets/js/script.js"></script>
-
-
-        </header>
-
-
-        </header>
-
-        <main>
-
-
-
-
-
-
-            <h2>Learn about your cocktail!</h2>
-
-            <p>Wikepedia search results</p>
-
-
-
-            <h3>Recent Searches:</h3>
-            <ul>
-                <li>stored result 1</li>
-                <li>stored result 2</li>
-                <li>stored result 3</li>
-                <li>stored result 4</li>
-                <li>stored result 5</li>
-            </ul>
-
-
-            <section>
-                <h2 class="font-bold">Cocktail Name:</h2>
-                <ul>
-                    <li>Ingrient</li>
-                    <li>Ingrient</li>
-                    <li>Ingrient</li>
-                </ul>
-            </section>
-
-            <section>
-                <h2 class="font-bold">Learn about your cocktail</h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing
-                    elit. Ab modi facilis blanditiis porro maxime impedit
-                    unde corrupti voluptas. Maxime sunt perferendis nihil,
-                    unde distinctio quidem ea sed excepturi aspernatur consequuntur.
+                <p id="instructions">
+                    <!-- instructions will be dynamically generated -->
                 </p>
-            </section>
-        </main>
+            </div>
+            <img src="" id="cocktailImg">
+        </section>
 
-        <aside>
+        <section id="recentSearches">
+            <!-- buttons will be dynamically generated -->
+        </section>
 
-        </aside>
+        <section id="triviaSection">
+            <button id="triviaBtn"> Get a Trivia Question! </button>
 
-        <footer>
+            <div id="triviaQandA">
+                <div id="triviaQ">
+                    <!-- questions will be dynamically generated -->
+                </div>
+                <div id="triviaA">
+                    <!-- answer buttons will be dynamically generated -->
+                </div>
+            </div>
+        </section>
 
-        </footer>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-        <script src="assets/js/script.js"></script>
+    </main>
 
-        <footer>
+    <footer id="pageFooter">
 
-        </footer>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-        <script src="assets/js/script.js"></script>
+        <!-- consider a more professional message for footerMsg1 as this is meant to be going in our portfolios. Can still be cute. But should look like we're actually doing this for a class. for example, I usually use:
+        
+                Made with ☕ and Javascript
+                    (but mostly coffee)
 
+        -->
+
+        <p id="footerMsg1">Made with 🖤 by Group 8</p>
+        <p id="footerMsg2">Please drink responsibly and happy mixing!</p>
+
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
