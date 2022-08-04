@@ -8,8 +8,10 @@ var searchHandler = function (event) {
         var userInput = $("#drinkSearch").val();
         console.log(userInput);
         search(userInput);
-    } else {
+    } else if ($(this).attr("id") === "randomFetchBtn") {
         random();
+    } else {
+        trivia();
     };
 };
 
@@ -19,17 +21,17 @@ function search(userInput) {
             console.log("BY NAME COCKTAIL", response);
             return response.json();
         }).then((data) => {
-            console.log("BY NAME COCKTAIL", data);
+            console.log("BY NAME COCKTAIL DATA", data);
         });
 };
 
 function random() {
     fetch(getRandomCocktail)
         .then((response) => {
-            console.log("RANDOM COCKTAIL", response);
+            console.log("RANDOM COCKTAIL RESPONSE", response);
             return response.json();
         }).then((data) => {
-            console.log("THERE", data);
+            console.log("RANDOM COCKTAIL DATA", data);
         });
 };
 
@@ -41,7 +43,8 @@ function trivia() {
         }).then((data) => {
             console.log("TRIVIA DATA", data);
         });
-}
+};
 
 $("#fetchBtn").click(searchHandler);
 $("#randomFetchBtn").click(searchHandler);
+$("#triviaBtn").click(searchHandler);
