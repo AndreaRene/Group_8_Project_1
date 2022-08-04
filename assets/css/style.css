@@ -1,0 +1,16 @@
+/* TODO: Smile. You are enough. */
+
+/* start of universal selectors */
+:root {
+    --darkOlive: #606c38;
+    --kombuGreen: #283618;
+    --cornsilk: #fefae0;
+    --earthYellow: #dda15e;
+    --liverDogs: #bc6c25;
+}
+
+body {
+    background-color: var(--darkOlive);
+}
+
+/* end of universal selectors */

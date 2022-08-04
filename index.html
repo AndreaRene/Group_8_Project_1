@@ -10,7 +10,7 @@
 
     <!-- || commenting out materialize to create page in plain html. uncomment when ready for styling || -->
 
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>Let's get buzzy!</title>
 </head>
@@ -45,8 +45,8 @@
 
                 <input type="text" id="drinkSearch" placeholder="Search..">
 
-                <button id="fetchBtn">Buzz</button>
-                <button id="randomFetchBtn">Random Cocktail</button>
+                <button class="waves-effect waves-light btn-small" id="fetchBtn">Buzz </button>
+                <button class="waves-effect waves-light btn-small" id="randomFetchBtn">Random Cocktail</button>
             </form>
         </section>
 
@@ -82,7 +82,7 @@
         </section>
 
         <section id="triviaSection">
-            <button id="triviaBtn"> Get a Trivia Question! </button>
+            <button class="waves-effect waves-light btn"id="triviaBtn"> Get a Trivia Question! </button>
 
             <div id="triviaQandA">
                 <div id="triviaQ">
@@ -97,13 +97,6 @@
     </main>
 
     <footer id="pageFooter">
-
-        <!-- consider a more professional message for footerMsg1 as this is meant to be going in our portfolios. Can still be cute. But should look like we're actually doing this for a class. for example, I usually use:
-        
-                Made with ☕ and Javascript
-                    (but mostly coffee)
-
-        -->
 
         <p id="footerMsg1">Made with 🖤 by Group 8</p>
         <p id="footerMsg2">Please drink responsibly and happy mixing!</p>
