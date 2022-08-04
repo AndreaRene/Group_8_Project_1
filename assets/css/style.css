@@ -17,10 +17,12 @@ body {
 
 .myBtns {}
 
+.btns {}
+
 .red {
-    background-color: red;
+    background-color: rgb(142, 23, 23);
 }
 
 .green {
-    background-color: green;
+    background-color: rgb(32, 86, 32);
 }

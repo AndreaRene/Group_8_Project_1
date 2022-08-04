@@ -98,9 +98,9 @@ function makeBtns(data) {
 
     $(".answerBtns").click(function () {
         if ($(this).text() === data[0].correctAnswer) {
-            $(this).removeClass().addClass("green");
+            $(this).addClass("green");
         } else {
-            $(this).removeClass().addClass("red");
+            $(this).addClass("red");
         };
     });
 };
