@@ -93,7 +93,18 @@ function makeBtns(data) {
         var button = $("<button>").addClass("myBtns answerBtns").text(answerArray[j]);
         $("#triviaA").append(button);
     };
+
+    // check trivia answer buttons on click for correct/incorrect
+
+    $(".answerBtns").click(function () {
+        if ($(this).text() === data[0].correctAnswer) {
+            $(this).removeClass().addClass("green");
+        } else {
+            $(this).removeClass().addClass("red");
+        };
+    });
 };
+
 
 // clear button to clear local storage and reload page
 
