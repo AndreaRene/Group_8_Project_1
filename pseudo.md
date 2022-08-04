@@ -79,7 +79,7 @@ populate 4 buttons with answer text (dynamic)
     empty div
     needs unique id
 
-    $("#answers")
+    $("#triviaA")
 
 classify 1 correct and 3 incorrect
 
