@@ -46,7 +46,7 @@ populate image based on recsult selected (recipe image fetch)
     $("#cocktailImg")
 
     dynamically changing the source of the image
-    
+
 search button (by name fetch or by ingredient fetch)
     button needs unique id
 
@@ -106,6 +106,9 @@ populate 4 buttons with answer text (dynamic)
     needs unique id
 
     $("#triviaA")
+
+use for loop and push to get correct and incorrect answers into an array
+randomize answers as the buttons are created(using another loop) 
 
 classify 1 correct and 3 incorrect
 

@@ -14,3 +14,15 @@ body {
 }
 
 /* end of universal selectors */
+
+.myBtns {}
+
+.btns {}
+
+.red {
+    background-color: rgb(142, 23, 23);
+}
+
+.green {
+    background-color: rgb(32, 86, 32);
+}
