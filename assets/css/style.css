@@ -14,7 +14,21 @@ body {
 }
 
 /* end of universal selectors */
-.waves-effect{
+.myBtns {
     background-color: var(--kombuGreen);
-    color: var(--earthYellow)
+    color: var(--earthYellow);
+}
+
+.myBtns:hover {
+    background-color: var(--kombuGreen) !important;
+    color: var(--earthYellow) !important;
+    cursor: pointer !important;
+}
+
+.red {
+    background-color: rgb(142, 23, 23);
+}
+
+.green {
+    background-color: rgb(32, 86, 32);
 }

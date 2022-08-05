@@ -10,6 +10,7 @@
 
     <!-- || commenting out materialize to create page in plain html. uncomment when ready for styling || -->
 
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>Let's get buzzy!</title>
@@ -45,8 +46,8 @@
 
                 <input type="text" id="drinkSearch" placeholder="Search..">
 
-                <button class="waves-effect waves-light btn-small" id="fetchBtn">Buzz </button>
-                <button class="waves-effect waves-light btn-small" id="randomFetchBtn">Random Cocktail</button>
+                <button class="waves-effect waves-light btn-small myBtns" id="searchBtn">Buzz</button>
+                <button class="waves-effect waves-light btn-small myBtns" id="randomFetchBtn">Random Cocktail</button>
             </form>
         </section>
 
@@ -77,17 +78,20 @@
             <img src="" id="cocktailImg">
         </section>
 
-        <section id="recentSearches">
+        <section id="searchHistorySection"></section>
+        <div id="recentSearches">
             <!-- buttons will be dynamically generated -->
+        </div>
+        <button class="waves-effect waves-light btn-small myBtns" id="clearBtn">Clear History</button>
         </section>
 
         <section id="triviaSection">
-            <button class="waves-effect waves-light btn"id="triviaBtn"> Get a Trivia Question! </button>
+            <button class="waves-effect waves-light btn myBtns" id="triviaBtn"> Get a Trivia Question! </button>
 
             <div id="triviaQandA">
-                <div id="triviaQ">
+                <p id="triviaQ">
                     <!-- questions will be dynamically generated -->
-                </div>
+                </p>
                 <div id="triviaA">
                     <!-- answer buttons will be dynamically generated -->
                 </div>
@@ -97,6 +101,13 @@
     </main>
 
     <footer id="pageFooter">
+
+        <!-- consider a more professional message for footerMsg1 as this is meant to be going in our portfolios. Can still be cute. But should look like we're actually doing this for a class. for example, I usually use:
+        
+                Made with ☕ and Javascript
+                    (but mostly coffee)
+
+        -->
 
         <p id="footerMsg1">Made with 🖤 by Group 8</p>
         <p id="footerMsg2">Please drink responsibly and happy mixing!</p>
