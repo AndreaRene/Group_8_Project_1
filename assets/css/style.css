@@ -24,6 +24,11 @@ body {
     align-items: center;
     background-color: var(--liverDogs);
 }
+.myBtns{
+    background-color: var(--kombuGreen);
+    color: var(--earthYellow);
+    border: var(--kombuGreen);
+}
 
 .myBtns:hover {
     background-color: var(--kombuGreen);
