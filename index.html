@@ -36,26 +36,26 @@
         <section id="searchSection">
             <h2>Begin your search for the perfect cocktail here!</h2>
             <form>
-                <label for="searchCriteria">Search by:</label>
+                <div id="formSide1">
+                    <label for="searchCriteria">Search by:</label>
 
-                <select id="searchCriteria" name="searchCriteria">
-                    <option value="name">Cocktail Name</option>
-                    <option value="nngredient">Ingredient</option>
-                </select>
+                    <select id="searchCriteria" name="searchCriteria">
+                        <option value="name">Cocktail Name</option>
+                        <option value="nngredient">Ingredient</option>
+                    </select>
 
-                <input type="text" id="drinkSearch" placeholder="Search..">
+                    <input type="text" id="drinkSearch" placeholder="Search..">
 
-                <button id="fetchBtn">Buzz</button>
-                <button id="randomFetchBtn">Random Cocktail</button>
-
-<<<<<<< HEAD
-=======
-                <select id="recipeList" name="recipeList">
-                    <option value="Recipes">Cocktail List</option>
-                </select>
-
-                <button id="">Get this Recipe!</button>
->>>>>>> 22fb537d03a44750b3e4aea931e1c138e375b7cc
+                    <button id="fetchBtn">Buzz</button>
+                    <button id="randomFetchBtn">Random Cocktail</button>
+                </div>
+                <div id="formSide2">
+                    <select id="recipeList" name="recipeList">
+                        <option>Recipes</option>
+                        <!-- options list will be dynamically generated -->
+                    </select>
+                    <button id="recipeBtn">Get this Recipe!</button>
+                </div>
             </form>
         </section>
 
