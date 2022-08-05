@@ -9,15 +9,20 @@
     --liverDogs: #bc6c25;
 }
 
+* {margin: 0;
+   padding: 0;}
+
 body {
+    padding: 0;
     background-color: var(--darkOlive);
 }
 
 /* end of universal selectors */
-.myBtns {
-    background-color: var(--kombuGreen);
-    color: var(--earthYellow);
-    border-color: var(--kombuGreen);
+#pageHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--liverDogs);
 }
 
 .myBtns:hover {
