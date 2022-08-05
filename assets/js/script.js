@@ -41,7 +41,7 @@ function search(userInput) {
                 console.log("BY INGREDIENT COCKTAIL", response);
                 return response.json();
             }).then((data) => {
-                console.log("BY NAME INGREDIENT DATA", data);
+                console.log("BY INGREDIENT DATA", data);
                 console.log($("#searchCriteria").val());
             });
     };
