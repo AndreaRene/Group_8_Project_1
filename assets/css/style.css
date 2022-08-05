@@ -25,10 +25,21 @@ body {
     background-color: var(--liverDogs);
 }
 
-.myBtns {}
+.myBtns{
+    background-color: var(--kombuGreen);
+    color: var(--earthYellow);
+    border: var(--kombuGreen);
+}
 
-.btns {}
 
+.myBtns:hover {
+    background-color: var(--kombuGreen);
+    color: var(--earthYellow);
+    cursor: pointer;
+}
+.trivia {
+color: var(--cornsilk);
+}
 .red {
     background-color: rgb(142, 23, 23);
 }
