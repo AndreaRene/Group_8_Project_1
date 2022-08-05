@@ -11,7 +11,7 @@
     <!-- || commenting out materialize to create page in plain html. uncomment when ready for styling || -->
 
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> />
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>Let's get buzzy!</title>
 </head>
@@ -37,17 +37,28 @@
         <section id="searchSection">
             <h2>Begin your search for the perfect cocktail here!</h2>
             <form>
-                <label for="searchCriteria">Search by:</label>
+                <div id="formSide1">
+                    <label for="searchCriteria">Search by:</label>
 
-                <select id="searchCriteria" name="searchCriteria">
-                    <option value="Name">Cocktail Name</option>
-                    <option value="Ingredient">Ingredient</option>
-                </select>
+                    <select id="searchCriteria" name="searchCriteria">
+                        <option value="name">Cocktail Name</option>
+                        <option value="nngredient">Ingredient</option>
+                    </select>
 
-                <input type="text" id="drinkSearch" placeholder="Search..">
+                    <input type="text" id="drinkSearch" placeholder="Search..">
 
-                <button class="waves-effect waves-light btn-small myBtns" id="searchBtn">Buzz</button>
-                <button class="waves-effect waves-light btn-small myBtns" id="randomFetchBtn">Random Cocktail</button>
+                    <button class="myBtns" id="fetchBtn">Buzz</button>
+                    <button class="myBtns" id="randomFetchBtn">Random Cocktail</button>
+                </div>
+                <div id="formSide2">
+                    <select id="recipeList" name="recipeList">
+                        <option>Recipes</option>
+                        <!-- options list will be dynamically generated -->
+                    </select>
+                    <button class="myBtns" id="recipeBtn">Get this Recipe!</button>
+                </div>
+            </form>
+        </section>
             </form>
         </section>
 
@@ -82,11 +93,11 @@
         <div id="recentSearches">
             <!-- buttons will be dynamically generated -->
         </div>
-        <button class="waves-effect waves-light btn-small myBtns" id="clearBtn">Clear History</button>
+        <button class="myBtns" id="clearBtn">Clear History</button>
         </section>
 
         <section id="triviaSection">
-            <button class="waves-effect waves-light btn myBtns" id="triviaBtn"> Get a Trivia Question! </button>
+            <button class="myBtns trivia " id="triviaBtn"> Get a Trivia Question! </button>
 
             <div id="triviaQandA">
                 <p id="triviaQ">
