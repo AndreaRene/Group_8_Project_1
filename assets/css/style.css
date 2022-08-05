@@ -9,11 +9,21 @@
     --liverDogs: #bc6c25;
 }
 
+* {margin: 0;
+   padding: 0;}
+
 body {
+    padding: 0;
     background-color: var(--darkOlive);
 }
 
 /* end of universal selectors */
+#pageHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--liverDogs);
+}
 
 .myBtns {}
 
