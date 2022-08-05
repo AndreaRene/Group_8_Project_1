@@ -1,0 +1,37 @@
+/* TODO: Smile. You are enough. */
+
+/* start of universal selectors */
+:root {
+    --darkOlive: #606c38;
+    --kombuGreen: #283618;
+    --cornsilk: #fefae0;
+    --earthYellow: #dda15e;
+    --liverDogs: #bc6c25;
+}
+
+body {
+    background-color: var(--darkOlive);
+}
+
+/* end of universal selectors */
+.myBtns {
+    background-color: var(--kombuGreen);
+    color: var(--earthYellow);
+    border-color: var(--kombuGreen);
+}
+
+.myBtns:hover {
+    background-color: var(--kombuGreen);
+    color: var(--earthYellow);
+    cursor: pointer;
+}
+.trivia {
+color: var(--cornsilk);
+}
+.red {
+    background-color: rgb(142, 23, 23);
+}
+
+.green {
+    background-color: rgb(32, 86, 32);
+}
