@@ -2,7 +2,7 @@
 
 var getCocktail = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
 var getIngredient = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=";
-var getRandomCocktail = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
+var getRandomCocktail = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
 
 // local storage array
 
@@ -34,6 +34,8 @@ function search(userInput) {
             }).then((data) => {
                 console.log("BY NAME COCKTAIL DATA", data);
                 console.log($("#searchCriteria").val());
+                $("#recipeName").text(data.drinks[0].strDrink);
+                $("#ingredients").text(data.drinks[0].strIngredient1);
             });
     } else {
         fetch(getIngredient + userInput)
