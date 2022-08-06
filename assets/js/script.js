@@ -14,8 +14,11 @@ var searchHandler = function (event) {
     event.preventDefault();
     if ($(this).attr("id") === "fetchBtn") {
         var userInput = $("#drinkSearch").val();
-        console.log(userInput);
-        search(userInput);
+        if (userInput) {
+            console.log(userInput);
+            search(userInput);
+            storeCocktail();
+        };
     } else if ($(this).attr("id") === "randomFetchBtn") {
         random();
     } else {
@@ -61,6 +64,35 @@ function random() {
         });
 };
 
+// store recent searches in local storage
+
+function storeCocktail() {
+    if (cocktailArray.some(function (el) {
+        return el === $("#drinkSearch").val();
+    })) {
+        return;
+    }
+    cocktailArray.push($("#drinkSearch").val());
+    localStorage.setItem("cocktail", JSON.stringify(cocktailArray));
+    makeCocktailBtns();
+};
+
+// make recent search buttons
+
+function makeCocktailBtns() {
+    $("#recentSearches").empty();
+    for (var i = 0; i < cocktailArray.length; i++) {
+        if (cocktailArray.length >= 6) {
+            cocktailArray.shift();
+            var button = $("<button>").addClass("myBtns cocktailBtns").text(cocktailArray[i]);
+            $("#recentSearches").append(button);
+        } else {
+            var button = $("<button>").addClass("myBtns cocktailBtns").text(cocktailArray[i]);
+            $("#recentSearches").append(button);
+        }
+    };
+};
+
 // get a quiz question
 
 function trivia() {
@@ -72,14 +104,14 @@ function trivia() {
             console.log("TRIVIA DATA", data);
             $("#triviaQ").text(data[0].question);
             console.log(data[0].question);
-            makeBtns(data);
+            makeAnswerBtns(data);
         });
 
 };
 
 // make trivia answer buttons
 
-function makeBtns(data) {
+function makeAnswerBtns(data) {
 
     $("#triviaA").empty();
     var answerArray = [];
@@ -132,5 +164,7 @@ function clearStorage() {
 
 $("#fetchBtn").click(searchHandler);
 $("#randomFetchBtn").click(searchHandler);
+$("#recipeBtn").click(searchHandler);
 $("#triviaBtn").click(searchHandler);
 $("#clearBtn").click(clearStorage);
+makeCocktailBtns();
