@@ -1,7 +1,9 @@
 // global variables
 
 var getCocktail = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
-var getRandomCocktail = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
+var getIngredient = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=";
+var getRandomCocktail = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
+
 
 // local storage array
 
@@ -11,10 +13,12 @@ var cocktailArray = JSON.parse(localStorage.getItem("cocktail")) || [];
 
 var searchHandler = function (event) {
     event.preventDefault();
-    if ($(this).attr("id") === "fetchBtn") {
+    if ($(this).attr("id") === "fetchBtn" || $(this).attr("id") === "recipeBtn") {
         var userInput = $("#drinkSearch").val();
-        console.log(userInput);
-        search(userInput);
+        if (userInput) {
+            console.log(userInput);
+            search(userInput);
+        };
     } else if ($(this).attr("id") === "randomFetchBtn") {
         random();
     } else {
@@ -25,13 +29,42 @@ var searchHandler = function (event) {
 // search by cocktail name 
 
 function search(userInput) {
-    fetch(getCocktail + userInput)
-        .then((response) => {
-            console.log("BY NAME COCKTAIL", response);
-            return response.json();
-        }).then((data) => {
-            console.log("BY NAME COCKTAIL DATA", data);
-        });
+    if ($("#searchCriteria").val() === "name") {
+        fetch(getCocktail + userInput)
+            .then((response) => {
+                console.log("BY NAME COCKTAIL", response);
+                return response.json();
+            }).then((data) => {
+                console.log("BY NAME COCKTAIL DATA", data);
+                console.log($("#searchCriteria").val());
+                if (!data.drinks) {
+                    alert("no data. make modal here");
+                } else if (data.drinks.length === 1) {
+                    storeCocktail();
+                    displayRecipe(data);
+                } else {
+                    $("#ingredients").text("There are " + data.drinks.length + " results for " + userInput + ". Please select an option from the list on the right.");
+
+                    let dropdown = $("#recipeList");
+
+                    dropdown.empty();
+                    dropdown.append('<option selected="true" disabled>Select a Recipe</option>');
+                    dropdown.prop("selectedIndex", 0);
+                    for (i = 0; i < data.drinks.length; i++) {
+                        dropdown.append($("<option></option>").text(data.drinks[i].strDrink));
+                    };
+                };
+            });
+    } else {
+        fetch(getIngredient + userInput)
+            .then((response) => {
+                console.log("BY INGREDIENT COCKTAIL", response);
+                return response.json();
+            }).then((data) => {
+                console.log("BY INGREDIENT DATA", data);
+                console.log($("#searchCriteria").val());
+            });
+    };
 };
 
 // get a random cocktail
@@ -43,7 +76,43 @@ function random() {
             return response.json();
         }).then((data) => {
             console.log("RANDOM COCKTAIL DATA", data);
+            displayRecipe();
         });
+};
+
+
+function displayRecipe(data) {
+    $("#recipeName").text(data.drinks[0].strDrink);
+    $("#ingredients").text(data.drinks[0].strIngredient1);
+    $("#cocktailImg").attr("src", data.drinks[0].strDrinkThumb);
+}
+// store recent searches in local storage
+
+function storeCocktail() {
+    if (cocktailArray.some(function (el) {
+        return el === $("#drinkSearch").val();
+    })) {
+        return;
+    }
+    cocktailArray.push($("#drinkSearch").val());
+    localStorage.setItem("cocktail", JSON.stringify(cocktailArray));
+    makeCocktailBtns();
+};
+
+// make recent search buttons
+
+function makeCocktailBtns() {
+    $("#recentSearches").empty();
+    for (var i = 0; i < cocktailArray.length; i++) {
+        if (cocktailArray.length >= 6) {
+            cocktailArray.shift();
+            var button = $("<button>").addClass("myBtns cocktailBtns").text(cocktailArray[i]);
+            $("#recentSearches").append(button);
+        } else {
+            var button = $("<button>").addClass("myBtns cocktailBtns").text(cocktailArray[i]);
+            $("#recentSearches").append(button);
+        }
+    };
 };
 
 // get a quiz question
@@ -57,14 +126,14 @@ function trivia() {
             console.log("TRIVIA DATA", data);
             $("#triviaQ").text(data[0].question);
             console.log(data[0].question);
-            makeBtns(data);
+            makeAnswerBtns(data);
         });
 
 };
 
 // make trivia answer buttons
 
-function makeBtns(data) {
+function makeAnswerBtns(data) {
 
     $("#triviaA").empty();
     var answerArray = [];
@@ -117,5 +186,7 @@ function clearStorage() {
 
 $("#fetchBtn").click(searchHandler);
 $("#randomFetchBtn").click(searchHandler);
+$("#recipeBtn").click(searchHandler);
 $("#triviaBtn").click(searchHandler);
 $("#clearBtn").click(clearStorage);
+makeCocktailBtns();
