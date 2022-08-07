@@ -15,9 +15,16 @@
 body {
     padding: 0;
     background-color: var(--darkOlive);
+    width: 100%;
+    overflow-x: hidden;
 }
 
 /* end of universal selectors */
+#searchSection {
+    flex-direction: column;
+}
+
+/* Header styling */
 #pageHeader {
     display: flex;
     justify-content: space-between;
@@ -25,21 +32,89 @@ body {
     background-color: var(--liverDogs);
 }
 
+#cocktailMsg {
+    padding-top: 20px;
+}
+
+/* Search styling */
+#formSide1, #formSide2 {
+    padding-left: 40px;
+    padding-right: 40px;
+    text-align: center;
+}
+
+#searchBtns {
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Recipe content */
+#recipeSection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#recipe {
+    background-color: var(--cornsilk);
+    min-height: 50rem;
+    width: 30rem;
+}
+
+#cocktailImg {
+    background-color: var(--kombuGreen);
+    width: 30rem;
+    height: 30rem;
+}
+
+/* History content */
+#history {
+    background-color: cyan;
+    height: 10rem;
+}
+
+/* Trivia section */
+#trivia {
+    background-color: yellow;
+    min-height: 25rem;
+}
+
+#triviaA {
+    display: flex;
+}
+
+.answerBtns {
+    width: 50%;
+}
+
+footer {
+    background-color: var(--liverDogs);
+}
+
+
+
 .myBtns{
     background-color: var(--kombuGreen);
     color: var(--earthYellow);
     border: var(--kombuGreen);
+    margin: 0 auto;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
 
 .myBtns:hover {
     background-color: var(--kombuGreen);
     color: var(--earthYellow);
     cursor: pointer;
 }
+
 .trivia {
 color: var(--cornsilk);
 }
+
 .red {
     background-color: rgb(142, 23, 23);
 }
@@ -47,3 +122,4 @@ color: var(--cornsilk);
 .green {
     background-color: rgb(32, 86, 32);
 }
+
