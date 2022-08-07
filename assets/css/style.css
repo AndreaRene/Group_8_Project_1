@@ -9,17 +9,22 @@
     --liverDogs: #bc6c25;
 }
 
-* {margin: 0;
-   padding: 0;}
+* {
+    margin: 0;
+    padding: 0;
+}
 
 body {
-    padding: 0;
-    background-color: var(--darkOlive);
+    /* padding: 0; */
     width: 100%;
     overflow-x: hidden;
+    background-color: var(--darkOlive);
+
 }
 
 /* end of universal selectors */
+
+
 #searchSection {
     flex-direction: column;
 }
@@ -32,14 +37,24 @@ body {
     background-color: var(--liverDogs);
 }
 
+
+#cocktailMsg {
+    text-align: right;
+}
+
+h2 {
+    text-align: center;
+}
+
 #cocktailMsg {
     padding-top: 20px;
 }
 
 /* Search styling */
-#formSide1, #formSide2 {
-    padding-left: 40px;
-    padding-right: 40px;
+#formSide1,
+#formSide2 {
+    /* padding-left: 40px;
+    padding-right: 40px; */
     text-align: center;
 }
 
@@ -60,12 +75,17 @@ body {
     background-color: var(--cornsilk);
     min-height: 50rem;
     width: 30rem;
+    border-radius: .5rem;
+    border: .7rem solid var(--kombuGreen);
 }
 
 #cocktailImg {
     background-color: var(--kombuGreen);
     width: 30rem;
-    height: 30rem;
+    height: auto;
+    min-height: 30rem;
+    border-radius: .5rem;
+    border: .7rem solid var(--kombuGreen);
 }
 
 /* History content */
@@ -82,10 +102,11 @@ body {
 
 #triviaA {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .answerBtns {
-    width: 50%;
+    width: 45%;
 }
 
 footer {
@@ -94,7 +115,7 @@ footer {
 
 
 
-.myBtns{
+.myBtns {
     background-color: var(--kombuGreen);
     color: var(--earthYellow);
     border: var(--kombuGreen);
@@ -105,14 +126,14 @@ footer {
     justify-content: center;
 }
 
+/* we don't need this since we're not using materialize anymore */
+
 .myBtns:hover {
-    background-color: var(--kombuGreen);
     color: var(--earthYellow);
-    cursor: pointer;
 }
 
 .trivia {
-color: var(--cornsilk);
+    color: var(--cornsilk);
 }
 
 .red {
@@ -122,4 +143,3 @@ color: var(--cornsilk);
 .green {
     background-color: rgb(32, 86, 32);
 }
-
