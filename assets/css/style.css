@@ -22,11 +22,6 @@ body {
 
 }
 
-/* p {
-    margin-bottom: 0;
-    text-align: center;
-} */
-
 /* end of universal selectors */
 
 
@@ -74,6 +69,7 @@ h2 {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    margin-bottom: 30px;
 }
 
 #recipe {
@@ -95,14 +91,22 @@ h2 {
 
 /* History content */
 #history {
-    background-color: cyan;
-    height: 10rem;
+    background-color: var(--cornsilk);
+    border: .7rem solid var(--kombuGreen);
+    min-height: 5rem;
+}
+
+#clearBtn {
+    background-color: var(--earthYellow);
+    color: var(--kombuGreen);
 }
 
 /* Trivia section */
 #trivia {
-    background-color: yellow;
-    min-height: 25rem;
+    background-color: var(--cornsilk);
+    min-height: 5rem;
+    text-align: center;
+    border: .7rem solid var(--kombuGreen);
 }
 
 #triviaA {
@@ -153,4 +157,18 @@ h2 {
 .green {
     background-color: rgb(32, 86, 32);
 
+}
+
+/* Screen size responsiveness */
+
+@media (max-width: 700px) {
+    
+    #pageHeader {
+        display: block;
+        text-align: center;
+    }
+
+    #cocktailMsg {
+        display: none;
+    }
 }
