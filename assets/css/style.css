@@ -22,6 +22,11 @@ body {
 
 }
 
+/* p {
+    margin-bottom: 0;
+    text-align: center;
+} */
+
 /* end of universal selectors */
 
 
@@ -109,11 +114,16 @@ h2 {
     width: 45%;
 }
 
-footer {
+/* Footer styling */
+#pageFooter {
     background-color: var(--liverDogs);
+    margin-top: 40px;
 }
 
-
+#footerMsg1, #footerMsg2 {
+    margin-bottom: 0;
+    text-align: center;
+}
 
 .myBtns {
     background-color: var(--kombuGreen);
@@ -142,4 +152,5 @@ footer {
 
 .green {
     background-color: rgb(32, 86, 32);
+
 }
