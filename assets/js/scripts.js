@@ -1,7 +1,7 @@
 // global variables
 
 var getCocktail = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
-var ingredientSearch = "www.thecocktaildb.com/api/json/v1/1/search.php?i="
+var ingredientSearch = "https://www.thecocktaildb.com/api/json/v1/1/search.php?i="
 var getIngredient = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=";
 var getRandomCocktail = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
 
@@ -79,6 +79,7 @@ function searchRecipes() {
 
 
 function displayRecipe(data) {
+    clearRecipeSection();
     $("#recipeName").text(data.drinks[0].strDrink);
 
     // TODO: get the damned list items working
@@ -88,12 +89,39 @@ function displayRecipe(data) {
 
     $("#instructions").text(data.drinks[0].strInstructions);
     $("#cocktailImg").attr("src", data.drinks[0].strDrinkThumb);
+
 };
+
+function searchIngredients() {
+    fetch(ingredientSearch + $("#drinkSearch").val())
+        .then((response) => {
+
+            console.log(response);
+            return response.json();
+
+        }).then((data) => {
+
+            console.log(data);
+            if (!data.ingredients) {
+                alert("ISSUE HERE! MODAL")
+            } else {
+                fetch(getIngredient + data.ingredients[0].strIngredient)
+                    .then((response) => {
+                        console.log(response);
+                        return response.json();
+                    }).then((data) => {
+
+                        console.log(data);
+                        populateDropdown(data);
+                    })
+            }
+        });
+}
 
 function populateDropdown(data) {
 
     // TODO: CLEAR RECIPE DIV 
-
+    clearRecipeSection();
     $("#ingredients").text("There are " + data.drinks.length + " results for " + $("#drinkSearch").val() + ". Please select an option from the list on the right.");
 
     let dropdown = $("#recipeList");
@@ -105,6 +133,8 @@ function populateDropdown(data) {
         dropdown.append($("<option></option>").text(data.drinks[i].strDrink));
     };
 };
+
+
 
 // random cocktail function
 
@@ -119,8 +149,11 @@ function randomCocktail() {
         });
 };
 
-
-
+function clearRecipeSection() {
+    $("#recipeName").empty();
+    $("#ingredients").empty();
+    $("#instructions").empty();
+};
 
 $("#fetchBtn").click(searchHandler);
 $("#randomFetchBtn").click(searchHandler);
