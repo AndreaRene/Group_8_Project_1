@@ -19,7 +19,6 @@ body {
     width: 100%;
     overflow-x: hidden;
     background-color: var(--darkOlive);
-
 }
 
 /* end of universal selectors */
@@ -62,8 +61,6 @@ h2 {
 
 #formSide1,
 #formSide2 {
-    /* padding-left: 40px;
-    padding-right: 40px; */
     text-align: center;
 }
 
@@ -104,11 +101,6 @@ h2 {
     min-height: 5rem;
 }
 
-#clearBtn {
-    background-color: var(--earthYellow);
-    color: var(--kombuGreen);
-}
-
 /* Trivia section */
 #trivia {
     background-color: var(--cornsilk);
@@ -123,7 +115,8 @@ h2 {
 }
 
 .answerBtns {
-    width: 45%;
+    min-width: 45%;
+    overflow-wrap: normal;
 }
 
 /* Footer styling */
@@ -138,10 +131,13 @@ h2 {
     text-align: center;
 }
 
-.myBtns {
+.greenBtns {
     background-color: var(--kombuGreen);
     color: var(--earthYellow);
     border: var(--kombuGreen);
+}
+
+.myBtns {
     margin: 0 auto;
     margin-bottom: 10px;
     display: flex;
@@ -151,7 +147,7 @@ h2 {
 
 /* we don't need this since we're not using materialize anymore */
 
-.myBtns:hover {
+.greenBtns:hover {
     color: var(--earthYellow);
 }
 
@@ -170,7 +166,34 @@ h2 {
 
 /* Screen size responsiveness */
 
-@media (max-width: 700px) {
+@media (max-width: 1305px) {
+
+    #triviaA {
+        display: block;
+    }
+}
+
+/* Playing around with responsiveness here */
+/* Can delete if need to */
+
+/* @media (max-width: 550px) {
+    
+    #searchBtns {
+        max-width: 50%;
+    }
+
+} */
+
+/* 
+@media (max-width: 630px) {
+    
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+} */
+
+@media (max-width: 375px) {
 
     #pageHeader {
         display: block;
@@ -179,5 +202,9 @@ h2 {
 
     #cocktailMsg {
         display: none;
+    }
+
+    #triviaA {
+        display: block;
     }
 }
