@@ -1,3 +1,5 @@
+// TODO: Smile. You are enough.
+
 // global variables
 
 var getCocktail = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
@@ -12,35 +14,21 @@ var cocktailArray = JSON.parse(localStorage.getItem("cocktail")) || [];
 //search handler 
 
 var searchHandler = function (event) {
-
     event.preventDefault();
-
     if ($(this).attr("id") === "fetchBtn") {
-
         var cocktailName = $("#drinkSearch").val();
-
         if (cocktailName) {
-
             console.log(cocktailName);
             nameSearch(cocktailName);
-
         };
-
     } else if ($(this).attr("id") === "recipeBtn") {
-
         var ingName = $("#recipeList").val();
-
         console.log(ingName);
         ingSearch(ingName);
-
     } else if ($(this).attr("id") === "randomFetchBtn") {
-
         random();
-
     } else {
-
         trivia();
-
     };
 };
 
@@ -64,7 +52,6 @@ function nameSearch(cocktailName) {
                     $("#ingredients").text("There are " + data.drinks.length + " results for " + cocktailName + ". Please select an option from the list on the right.");
                     dropdown();
                     let dropdown = $("#recipeList");
-
                     dropdown.empty();
                     dropdown.append('<option selected="true" disabled>Select a Recipe</option>');
                     dropdown.prop("selectedIndex", 0);
@@ -84,10 +71,6 @@ function nameSearch(cocktailName) {
             });
     };
 };
-
-function ingSearch(ingName) {
-
-}
 
 // get a random cocktail
 
@@ -155,7 +138,6 @@ function trivia() {
 // make trivia answer buttons
 
 function makeAnswerBtns(data) {
-
     $("#triviaA").empty();
     var answerArray = [];
 

@@ -21,86 +21,83 @@ var searchHandler = function (event) {
         getRecipe(event);
     } else if ($(this).attr("id") === "randomFetchBtn") {
         randomCocktail();
-    } else {
+    } else if ($(this).attr("id") === "triviaBtn") {
         trivia();
+    } else {
+        $("#drinkSearch").val($(this).text());
+        searchRecipes();
     };
 };
 
 // search by recipe name
 
-function searchRecipes() {
-
+function searchRecipes(event) {
+    clearRecipeSection()
     let drinkName = $("#drinkSearch").val();
     if (!drinkName) {
-        return alert("ISSUE HERE. MODAL");
+        $("#errorMsg").text("Oops! We couldn't find any results for " + $("#drinkSearch").val() + ". Please try a different search term.");
     };
     fetch(getCocktail + drinkName)
         .then((response) => {
-            console.log(response);
             return response.json();
         }).then((data) => {
-            console.log(data);
             if (!data.drinks) {
-                alert("ISSUE HERE. MODAL");
+                $("#errorMsg").text("Oops! We couldn't find any results for " + $("#drinkSearch").val() + ". Please try a different search term.");
             } else if (data.drinks.length === 1) {
                 displayRecipe(data);
-                storeCocktail();
+                storeCocktail(event);
             } else {
                 populateDropdown(data);
             };
         });
 };
 
-
-function displayRecipe(data) {
-    clearRecipeSection();
-    $("#recipeName").text(data.drinks[0].strDrink);
-
-    console.log(data.drinks[0].strIngredient1);
-
-    // TODO: get the damned list items working
-    for (i = 1; i <= 15; i++) {
-        if (data.drinks[0]["strIngredient" + [i]] !== null) {
-            var listItem = $("<li>").text(data.drinks[0]["strIngredient" + [i]]);
-            console.log(listItem);
-            $("#ingredients").append(listItem);
-        };
-    };
-
-    $("#instructions").text(data.drinks[0].strInstructions);
-    $("#cocktailImg").attr("src", data.drinks[0].strDrinkThumb);
-
-};
+// search by ingredient
 
 function searchIngredients() {
+    clearRecipeSection();
+    if (!$("#drinkSearch").val()) {
+        $("#errorMsg").text("Oops! We couldn't find any results for " + $("#drinkSearch").val() + ". Please try a different search term.");
+    }
     fetch(ingredientSearch + $("#drinkSearch").val())
         .then((response) => {
-            console.log(response);
             return response.json();
         }).then((data) => {
-            console.log(data);
             if (!data.ingredients) {
-                alert("ISSUE HERE! MODAL")
+                $("#errorMsg").text("Oops! We couldn't find any results for " + $("#drinkSearch").val() + ". Please try a different search term.");
             } else {
                 fetch(getIngredient + data.ingredients[0].strIngredient)
                     .then((response) => {
-                        console.log(response);
                         return response.json();
                     }).then((data) => {
-                        console.log(data);
                         populateDropdown(data);
                     })
             }
         });
 }
 
+// display recipe
+
+function displayRecipe(data) {
+    clearRecipeSection();
+    $("#recipeName").text(data.drinks[0].strDrink);
+    for (i = 1; i <= 15; i++) {
+        if (data.drinks[0]["strIngredient" + [i]] !== null) {
+            var listItem = $("<li>").text(data.drinks[0]["strMeasure" + [i]] + " - " + data.drinks[0]["strIngredient" + [i]]);
+            $("#ingredients").append(listItem);
+        };
+    };
+    $("#instructions").text(data.drinks[0].strInstructions);
+    $("#cocktailImg").attr("src", data.drinks[0].strDrinkThumb);
+
+};
+
 function getRecipe(event) {
+    clearRecipeSection();
     fetch(getCocktail + $("#recipeList").val())
         .then((response) => {
-            console.log(response);
             return response.json();
         }).then((data) => {
-            console.log(data);
             displayRecipe(data);
             storeCocktail(event);
         });
@@ -108,16 +105,22 @@ function getRecipe(event) {
 
 function populateDropdown(data) {
 
+
     clearRecipeSection();
-    $("#ingredients").text("There are " + data.drinks.length + " results for " + $("#drinkSearch").val() + ". Please select an option from the list on the right.");
+    if ($("#drinkSearch").val() === "") {
+        $("#errorMsg").text("Oops! We couldn't find any results for " + $("#drinkSearch").val() + ". Please try a different search term.");
+        return;
+    } else {
+        $("#ingredients").text("There are " + data.drinks.length + " results for " + $("#drinkSearch").val() + ". Please select an option from the list on the right.");
 
-    let dropdown = $("#recipeList");
+        let dropdown = $("#recipeList");
 
-    dropdown.empty();
-    dropdown.append('<option selected="true" disabled>Select a Recipe</option>');
-    dropdown.prop("selectedIndex", 0);
-    for (i = 0; i < data.drinks.length; i++) {
-        dropdown.append($("<option></option>").text(data.drinks[i].strDrink));
+        dropdown.empty();
+        dropdown.append('<option selected="true" disabled>Select a Recipe</option>');
+        dropdown.prop("selectedIndex", 0);
+        for (i = 0; i < data.drinks.length; i++) {
+            dropdown.append($("<option></option>").text(data.drinks[i].strDrink));
+        };
     };
 };
 
@@ -126,10 +129,8 @@ function populateDropdown(data) {
 function randomCocktail() {
     fetch(getRandomCocktail)
         .then((response) => {
-            console.log("RANDOM COCKTAIL RESPONSE", response);
             return response.json();
         }).then((data) => {
-            console.log("RANDOM COCKTAIL DATA", data);
             displayRecipe(data);
         });
 };
@@ -142,7 +143,6 @@ function storeCocktail(event) {
     })) {
         return;
     };
-    console.log(event.target.matches("#recipeBtn"));
     if (event.target.matches("#recipeBtn")) {
         cocktailArray.push($("#recipeList").val());
     } else {
@@ -174,6 +174,7 @@ function clearRecipeSection() {
     $("#recipeName").empty();
     $("#ingredients").empty();
     $("#instructions").empty();
+    $("#errorMsg").empty();
 };
 
 // get a quiz question
@@ -181,12 +182,9 @@ function clearRecipeSection() {
 function trivia() {
     fetch("https://the-trivia-api.com/api/questions?limit=1&tags=drinks,drink,cocktails,alcohol")
         .then((response) => {
-            console.log("TRIVIA RESPONSE", response);
             return response.json();
         }).then((data) => {
-            console.log("TRIVIA DATA", data);
             $("#triviaQ").text(data[0].question);
-            console.log(data[0].question);
             makeAnswerBtns(data);
         });
 };
@@ -194,7 +192,6 @@ function trivia() {
 // make trivia answer buttons
 
 function makeAnswerBtns(data) {
-
     $("#triviaA").empty();
     var answerArray = [];
 
@@ -217,7 +214,6 @@ function makeAnswerBtns(data) {
 
     // create and append buttons to answer section with randomized answers from array
 
-    console.log(answerArray);
     for (j = 0; j < answerArray.length; j++) {
         var button = $("<button>").addClass("myBtns answerBtns").text(answerArray[j]);
         $("#triviaA").append(button);
@@ -248,5 +244,6 @@ $("#randomFetchBtn").click(searchHandler);
 $("#recipeBtn").click(searchHandler);
 $("#triviaBtn").click(searchHandler);
 $("#clearBtn").click(clearStorage);
+$("#recentSearches").on("click", "button", searchHandler);
 makeCocktailBtns();
 trivia();
