@@ -1,3 +1,5 @@
+// TODO: Smile. You are enough.
+
 // global variables
 
 var getCocktail = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
@@ -13,12 +15,16 @@ var cocktailArray = JSON.parse(localStorage.getItem("cocktail")) || [];
 
 var searchHandler = function (event) {
     event.preventDefault();
-    if ($(this).attr("id") === "fetchBtn" || $(this).attr("id") === "recipeBtn") {
-        var userInput = $("#drinkSearch").val();
-        if (userInput) {
-            console.log(userInput);
-            search(userInput);
+    if ($(this).attr("id") === "fetchBtn") {
+        var cocktailName = $("#drinkSearch").val();
+        if (cocktailName) {
+            console.log(cocktailName);
+            nameSearch(cocktailName);
         };
+    } else if ($(this).attr("id") === "recipeBtn") {
+        var ingName = $("#recipeList").val();
+        console.log(ingName);
+        ingSearch(ingName);
     } else if ($(this).attr("id") === "randomFetchBtn") {
         random();
     } else {
@@ -28,9 +34,9 @@ var searchHandler = function (event) {
 
 // search by cocktail name 
 
-function search(userInput) {
+function nameSearch(cocktailName) {
     if ($("#searchCriteria").val() === "name") {
-        fetch(getCocktail + userInput)
+        fetch(getCocktail + cocktailName)
             .then((response) => {
                 console.log("BY NAME COCKTAIL", response);
                 return response.json();
@@ -43,10 +49,9 @@ function search(userInput) {
                     storeCocktail();
                     displayRecipe(data);
                 } else {
-                    $("#ingredients").text("There are " + data.drinks.length + " results for " + userInput + ". Please select an option from the list on the right.");
-
+                    $("#ingredients").text("There are " + data.drinks.length + " results for " + cocktailName + ". Please select an option from the list on the right.");
+                    dropdown();
                     let dropdown = $("#recipeList");
-
                     dropdown.empty();
                     dropdown.append('<option selected="true" disabled>Select a Recipe</option>');
                     dropdown.prop("selectedIndex", 0);
@@ -56,7 +61,7 @@ function search(userInput) {
                 };
             });
     } else {
-        fetch(getIngredient + userInput)
+        fetch(getIngredient + ingName)
             .then((response) => {
                 console.log("BY INGREDIENT COCKTAIL", response);
                 return response.json();
@@ -79,7 +84,6 @@ function random() {
             displayRecipe();
         });
 };
-
 
 function displayRecipe(data) {
     $("#recipeName").text(data.drinks[0].strDrink);
@@ -134,7 +138,6 @@ function trivia() {
 // make trivia answer buttons
 
 function makeAnswerBtns(data) {
-
     $("#triviaA").empty();
     var answerArray = [];
 
@@ -173,7 +176,6 @@ function makeAnswerBtns(data) {
         };
     });
 };
-
 
 // clear button to clear local storage and reload page
 

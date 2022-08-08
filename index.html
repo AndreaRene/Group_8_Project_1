@@ -36,6 +36,7 @@
     <main id="pageMain">
         <section class="row" id="searchSection">
             <h2 class="column">Begin your search for the perfect cocktail here!</h2>
+            <p id="errorMsg"></p>
             <form class="column row" id="searchForm">
                 <div class="five columns" id="formSide1">
                     <label for="searchCriteria">Search by:</label>
@@ -53,6 +54,7 @@
                     </div>
                 </div>
                 <div class="five columns" id="formSide2">
+                    <label for="recipeList">Search Results:</label>
                     <select id="recipeList" name="recipeList">
                         <option>Select a Recipe
                         </option>
@@ -103,7 +105,7 @@
 
             <div class="six columns" id="trivia">
                 <section id="triviaSection">
-                    <button class="myBtns greenBtns" id="triviaBtn"> Get a Trivia Question! </button>
+
 
                     <div id="triviaQandA">
                         <p id="triviaQ">
@@ -112,6 +114,7 @@
                         <div id="triviaA">
                             <!-- answer buttons will be dynamically generated -->
                         </div>
+                        <button class="myBtns greenBtns" id="triviaBtn"> Get another Trivia Question! </button>
                     </div>
                 </section>
             </div>
@@ -134,7 +137,7 @@
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/scripts.js"></script>
 </body>
 
 </html>
