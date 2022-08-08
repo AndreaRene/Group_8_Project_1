@@ -118,6 +118,20 @@ function searchIngredients() {
         });
 }
 
+function getRecipe() {
+    fetch(getCocktail + $("#recipeList").val())
+        .then((response) => {
+
+            console.log(response);
+            return response.json();
+
+        }).then((data) => {
+
+            console.log(data);
+            displayRecipe(data);
+        });
+}
+
 function populateDropdown(data) {
 
     // TODO: CLEAR RECIPE DIV 
