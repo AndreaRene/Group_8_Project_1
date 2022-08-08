@@ -12,25 +12,43 @@ var cocktailArray = JSON.parse(localStorage.getItem("cocktail")) || [];
 //search handler 
 
 var searchHandler = function (event) {
+
     event.preventDefault();
-    if ($(this).attr("id") === "fetchBtn" || $(this).attr("id") === "recipeBtn") {
-        var userInput = $("#drinkSearch").val();
-        if (userInput) {
-            console.log(userInput);
-            search(userInput);
+
+    if ($(this).attr("id") === "fetchBtn") {
+
+        var cocktailName = $("#drinkSearch").val();
+
+        if (cocktailName) {
+
+            console.log(cocktailName);
+            nameSearch(cocktailName);
+
         };
+
+    } else if ($(this).attr("id") === "recipeBtn") {
+
+        var ingName = $("#recipeList").val();
+
+        console.log(ingName);
+        ingSearch(ingName);
+
     } else if ($(this).attr("id") === "randomFetchBtn") {
+
         random();
+
     } else {
+
         trivia();
+
     };
 };
 
 // search by cocktail name 
 
-function search(userInput) {
+function nameSearch(cocktailName) {
     if ($("#searchCriteria").val() === "name") {
-        fetch(getCocktail + userInput)
+        fetch(getCocktail + cocktailName)
             .then((response) => {
                 console.log("BY NAME COCKTAIL", response);
                 return response.json();
@@ -43,8 +61,8 @@ function search(userInput) {
                     storeCocktail();
                     displayRecipe(data);
                 } else {
-                    $("#ingredients").text("There are " + data.drinks.length + " results for " + userInput + ". Please select an option from the list on the right.");
-
+                    $("#ingredients").text("There are " + data.drinks.length + " results for " + cocktailName + ". Please select an option from the list on the right.");
+                    dropdown();
                     let dropdown = $("#recipeList");
 
                     dropdown.empty();
@@ -56,7 +74,7 @@ function search(userInput) {
                 };
             });
     } else {
-        fetch(getIngredient + userInput)
+        fetch(getIngredient + ingName)
             .then((response) => {
                 console.log("BY INGREDIENT COCKTAIL", response);
                 return response.json();
@@ -66,6 +84,10 @@ function search(userInput) {
             });
     };
 };
+
+function ingSearch(ingName) {
+
+}
 
 // get a random cocktail
 
@@ -79,7 +101,6 @@ function random() {
             displayRecipe();
         });
 };
-
 
 function displayRecipe(data) {
     $("#recipeName").text(data.drinks[0].strDrink);
