@@ -195,7 +195,6 @@ function makeAnswerBtns(data) {
     });
 };
 
-
 // clear button to clear local storage and reload page
 
 function clearStorage() {
