@@ -81,7 +81,6 @@ function searchIngredients() {
 
 function displayRecipe(data) {
     clearRecipeSection();
-    console.log(data);
     $("#recipeName").text(data.drinks[0].strDrink);
     $("#alcoholic").text(data.drinks[0].strAlcoholic);
     for (i = 1; i <= 15; i++) {
