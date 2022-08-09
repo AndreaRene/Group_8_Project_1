@@ -1,6 +1,6 @@
-# Catchy Application Name
+# Trivia on the rocks
 
-This application is a fun recipe finder for cocktails. The user can search by name or ingredient. There is a dropdown menu to select the desired cocktail recipe if there is more than one result. 
+This application is a recipe finder for cocktails with which the user can search by name or ingredient. There is a dropdown menu to select the desired cocktail recipe if there is more than one result. 
 
 There is also a fun trivia section all about drinks that the user can play with while they are mixing/drinking their cocktails.
 
@@ -21,6 +21,7 @@ There is also a fun trivia section all about drinks that the user can play with 
 * CSS
 * Javascript
 * JQuery
+* Skeleton CSS
 * [TheCocktailDB](https://www.thecocktaildb.com/api.php) A free API with access to hundreds of coctail recipes and several different API Methods
 * [The Trivia API](https://the-trivia-api.com/) A free API with multiple choice questions on a large variety of subjects.
 * [Miro](https://miro.com/about/): A visual colaboration and whiteboard platform for planning/wireframing. 
@@ -35,8 +36,8 @@ There is also a fun trivia section all about drinks that the user can play with 
 
 ## Colaborators
 
-* []()
-* []()
-* []()
-* []()
-* []()
+* [Andrea Rene](https://github.com/AndreaRene)
+* [Valeria Lopez](https://github.com/valopezs)
+* [Valeria Gonzalez](https://github.com/ValPal1320)
+* [Ashonti Madison](https://github.com/ValPal1320)
+* [Prina Selvakumar](https://github.com/prinaselvakumar)
