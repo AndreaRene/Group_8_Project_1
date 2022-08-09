@@ -7,31 +7,484 @@
     --cornsilk: #fefae0;
     --earthYellow: #dda15e;
     --liverDogs: #bc6c25;
+    --orangeDashed: 1px dashed var(--liverDogs);
+}
+
+* {
+    margin: 0;
+    padding: 0;
 }
 
 body {
     background-color: var(--darkOlive);
+    color: var(--kombuGreen);
+    overflow-x: hidden;
 }
 
 /* end of universal selectors */
-.myBtns {
-    background-color: var(--kombuGreen);
-    color: var(--earthYellow);
-    border-color: var(--kombuGreen);
+
+
+/* start of header section */
+
+#pageHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    background-color: var(--liverDogs);
 }
 
-.myBtns:hover {
+#martiniIcon {
+    width: 6rem;
+    height: auto;
+}
+
+#cocktailMsg {
+    text-align: right;
+    padding-top: 20px;
+    font-size: 5rem;
+}
+
+/* end of header section */
+
+/* start of main section */
+
+#pageMain {
+    padding: 1rem 17rem;
+}
+
+#appInfo {
+    text-align: center;
+    font-size: 3rem;
+}
+
+/* top banner */
+#cocktailBanner {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    justify-content: space-evenly;
+    padding-top: .5rem;
+}
+
+.bannerImg {
+    width: 4rem;
+}
+
+/* search form */
+
+#searchSection {
+    display: flex;
+    flex-direction: column;
+}
+
+#searchForm {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#formSide1,
+#formSide2 {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-size: 3rem;
+    width: 30rem;
+
+}
+
+#searchBtns {
+    display: flex;
+    justify-content: center;
+}
+
+/* TODO BUTTONS HERE */
+
+
+#fetchBtn,
+#randomFetchBtn {
+    margin: .2rem;
+    max-width: 15REM;
+
+}
+
+#searchCriteria,
+#drinkSearch,
+#recipeList {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+/* Recipe content */
+
+#recipeSection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+#recipe,
+#cocktailImg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: var(--kombuGreen);
     color: var(--earthYellow);
-    cursor: pointer;
+    width: 40rem;
+    min-height: 35rem;
+    border-radius: .5rem;
+    border: .7rem solid var(--cornsilk);
+    padding: 20px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
-.trivia {
-color: var(--cornsilk);
+
+#recipeName {
+    margin: 0;
+    font-size: 3rem;
+    color: var(--cornsilk);
+    border-bottom: var(--orangeDashed);
+    border-top: var(--orangeDashed);
 }
+
+#alcoholic {
+    text-align: right;
+    justify-self: flex-start;
+}
+
+#ingredients {
+    line-height: 1.5rem;
+}
+
+#instructions {
+    color: var(--cornsilk);
+    border-top: var(--orangeDashed);
+    border-bottom: var(--orangeDashed);
+    max-height: 15rem;
+    overflow-y: scroll;
+}
+
+/* search history content */
+
+#bottomRow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Trivia section */
+
+#triviaQ,
+#searchTitle {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    color: var(--cornsilk);
+}
+
+#triviaA {
+    display: flex;
+    flex-direction: column;
+}
+
+#searchHistorySection,
+#triviaSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 40rem;
+    width: 40rem;
+    padding: 20px;
+}
+
+/* button styling */
+
+.myBtns {
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.myBtns:active {
+    transform: translate(2px, 2px);
+}
+
+.myBtns:focus {
+    color: var(--earthYellow);
+}
+
+.answerBtns,
+.cocktailBtns {
+    width: 90%;
+    overflow-wrap: normal;
+    background-color: var(--cornsilk);
+    border: .2rem solid var(--kombuGreen);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+#triviaBtn,
+#clearBtn {
+    width: 90%;
+}
+
+.greenBtns {
+    background-color: var(--kombuGreen);
+    color: var(--earthYellow);
+    border: var(--kombuGreen);
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+
+.greenBtns:hover {
+    color: var(--earthYellow);
+}
+
+/* correct/incorrect trivia answer styling */
+
 .red {
     background-color: rgb(142, 23, 23);
+    color: var(--cornsilk);
 }
 
 .green {
     background-color: rgb(32, 86, 32);
+    color: var(--cornsilk);
+}
+
+.green:focus,
+.red:focus {
+    color: var(--cornsilk);
+}
+
+/* end of main section */
+
+/* start of footer section */
+
+#pageFooter {
+    background-color: var(--liverDogs);
+    margin-top: 40px;
+    padding: 2rem;
+}
+
+#footerMsg1,
+#footerMsg2 {
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 2rem;
+}
+
+/* end of footer section */
+
+/* end of footer */
+
+/* scrollbar */
+
+::-webkit-scrollbar {
+    width: .5rem;
+    background: var(--kombuGreen);
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px var(--kombuGreen);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--kombuGreen);
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px var(--liverDogs);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--liverDogs);
+}
+
+/* end of scrollbar */
+
+/* media queries */
+
+
+@media (max-width: 1399px) {
+
+    #cocktailMsg {
+        font-size: 4rem;
+    }
+
+    #pageMain {
+        padding: 1rem 10rem;
+    }
+
+    #appInfo {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 1199px) {
+
+    #pageMain {
+        padding: 1rem 5rem;
+    }
+
+    #recipe,
+    #cocktailImg {
+        min-height: 15rem;
+    }
+
+    #recipeName {
+        font-size: 2.5rem;
+    }
+
+    #formSide1,
+    #formSdie2,
+    #recipe,
+    #cocktailImg,
+    #searchHistorySection,
+    #triviaSection {
+        width: 30rem;
+    }
+}
+
+@media (max-width: 991px) {
+    #cocktailMsg {
+        font-size: 3rem;
+    }
+
+    #pageMain {
+        padding: 1rem 5rem;
+    }
+
+    #appInfo {
+        font-size: 2rem;
+    }
+
+    #recipe,
+    #cocktailImg {
+        min-height: 20rem;
+    }
+
+    /* #formSide1,
+    #formSdie2, */
+    #recipe,
+    #cocktailImg,
+    #searchHistorySection,
+    #triviaSection {
+        width: 25rem;
+    }
+
+    .cocktailBtns,
+    .answerBtns,
+    #triviaBtn,
+    #clearBtn {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 767px) {
+    #cocktailMsg {
+        font-size: 2.3rem;
+    }
+
+    #pageMain {
+        padding: 1rem .2rem;
+    }
+
+    #appInfo {
+        display: none;
+    }
+
+    #formSide1,
+    #formSide2 {
+        font-size: 2rem;
+        width: 20rem;
+    }
+
+    #recipe,
+    #cocktailImg {
+        min-height: 10rem;
+    }
+
+    #ingredients {
+        max-height: 10rem;
+        font-size: 1.4rem;
+        overflow-y: scroll;
+    }
+
+    #recipe,
+    #cocktailImg,
+    #searchHistorySection,
+    #triviaSection {
+        width: 21rem;
+    }
+
+    .cocktailBtns,
+    .answerBtns,
+    #triviaBtn,
+    #clearBtn {
+        font-size: .9rem;
+    }
+
+}
+
+@media (max-width: 575px) {
+
+    #pageHeader {
+        justify-content: center;
+    }
+
+    #cocktailMsg {
+        display: none;
+    }
+
+    #searchForm {
+        flex-direction: column;
+        margin-top: 2rem;
+    }
+
+
+    #formSide2 {
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 1.5rem;
+
+    }
+
+    #recipeBtn {
+        margin-left: 1rem;
+    }
+
+    #searchBy,
+    #searchRes {
+        display: none;
+    }
+
+    #recipeSection,
+    #bottomRow {
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+
+    #triviaSection,
+    #searchHistorySection {
+        margin: auto;
+        min-height: 5rem;
+    }
+
+    #recipe,
+    #searchHistorySection,
+    #triviaSection {
+        width: 70%;
+    }
+
+    #cocktailImg {
+        width: 20rem;
+        height: 20rem;
+        padding: 0;
+        border-radius: 50%;
+        margin-bottom: 3rem;
+        border: 3px solid var(--kombuGreen)
+    }
 }
