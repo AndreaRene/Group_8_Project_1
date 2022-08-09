@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
         integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- <link rel="stylesheet" href="assets/css/reset.css" /> -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>Let's get buzzy!</title>
+    <!-- TODO: Smile. You are enough. -->
 </head>
 
 <body>
@@ -24,8 +24,11 @@
 
     <main id="pageMain">
         <section class="" id="searchSection">
-            <h2 class="">Begin your search for the perfect cocktail here!</h2>
-            <p class="" id="errorMsg"></p>
+            <h2 id="appInfo">Thank you for joining us for cocktails and trivia!
+                <br>
+                Relax and begin your search for the perfect
+                cocktail here!
+            </h2>
             <form class=" " id="searchForm">
                 <div class="" id="formSide1">
                     <label for="searchCriteria">Search by:</label>
@@ -61,6 +64,9 @@
                 <h2 id="recipeName">
                     <!-- recipe name will be dynamically generated -->
                 </h2>
+                <p id="alcoholic">
+                    <!-- alcoholic/non alcoholic data dynamically generated -->
+                </p>
                 <ul id="ingredients">
                     <!-- ingredients list will be dynamically generated -->
                 </ul>

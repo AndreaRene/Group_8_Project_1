@@ -1,3 +1,4 @@
+// TODO: Smile. You are enough.
 // global variables
 
 var getCocktail = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
@@ -35,14 +36,14 @@ function searchRecipes(event) {
     clearRecipeSection()
     let drinkName = $("#drinkSearch").val();
     if (!drinkName) {
-        $("#errorMsg").text("Oops! We couldn't find any results for " + $("#drinkSearch").val() + ". Please try a different search term.");
+        $("#ingredients").text("Oops! We couldn't find any results for that. Please try a different search term.");
     };
     fetch(getCocktail + drinkName)
         .then((response) => {
             return response.json();
         }).then((data) => {
             if (!data.drinks) {
-                $("#errorMsg").text("Oops! We couldn't find any results for " + $("#drinkSearch").val() + ". Please try a different search term.");
+                $("#ingredients").text("Oops! We couldn't find any results for that. Please try a different search term.");
             } else if (data.drinks.length === 1) {
                 displayRecipe(data);
                 storeCocktail(event);
@@ -57,14 +58,14 @@ function searchRecipes(event) {
 function searchIngredients() {
     clearRecipeSection();
     if (!$("#drinkSearch").val()) {
-        $("#errorMsg").text("Oops! We couldn't find any results for " + $("#drinkSearch").val() + ". Please try a different search term.");
+        $("#ingredients").text("Oops! We couldn't find any results for that. Please try a different search term.");
     }
     fetch(ingredientSearch + $("#drinkSearch").val())
         .then((response) => {
             return response.json();
         }).then((data) => {
             if (!data.ingredients) {
-                $("#errorMsg").text("Oops! We couldn't find any results for " + $("#drinkSearch").val() + ". Please try a different search term.");
+                $("#ingredients").text("Oops! We couldn't find any results for that. Please try a different search term.");
             } else {
                 fetch(getIngredient + data.ingredients[0].strIngredient)
                     .then((response) => {
@@ -80,7 +81,9 @@ function searchIngredients() {
 
 function displayRecipe(data) {
     clearRecipeSection();
+    console.log(data);
     $("#recipeName").text(data.drinks[0].strDrink);
+    $("#alcoholic").text(data.drinks[0].strAlcoholic);
     for (i = 1; i <= 15; i++) {
         if (data.drinks[0]["strIngredient" + [i]] !== null) {
             var listItem = $("<li>").text(data.drinks[0]["strMeasure" + [i]] + " - " + data.drinks[0]["strIngredient" + [i]]);
@@ -108,7 +111,7 @@ function populateDropdown(data) {
 
     clearRecipeSection();
     if ($("#drinkSearch").val() === "") {
-        $("#errorMsg").text("Oops! We couldn't find any results for " + $("#drinkSearch").val() + ". Please try a different search term.");
+        $("#ingredients").text("Oops! We couldn't find any results for that. Please try a different search term.");
         return;
     } else {
         $("#ingredients").text("There are " + data.drinks.length + " results for " + $("#drinkSearch").val() + ". Please select an option from the list on the right.");
@@ -172,9 +175,10 @@ function makeCocktailBtns() {
 
 function clearRecipeSection() {
     $("#recipeName").empty();
+    $("#alcoholic").empty();
     $("#ingredients").empty();
     $("#instructions").empty();
-    $("#errorMsg").empty();
+    $("#cocktailImg").attr("src", "");
 };
 
 // get a quiz question
