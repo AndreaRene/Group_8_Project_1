@@ -178,7 +178,7 @@ function clearRecipeSection() {
     $("#alcoholic").empty();
     $("#ingredients").empty();
     $("#instructions").empty();
-    $("#cocktailImg").attr("src", "");
+    $("#cocktailImg").attr("src", "assets/imgs/noun-drink-on-the-rocks-1245573-FB8500.svg");
 };
 
 // get a quiz question
