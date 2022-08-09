@@ -41,7 +41,7 @@ While we all worked together on design creation, wireframing, and project manage
 * [Andrea Rene](https://github.com/AndreaRene) - Javascript, API handling, css, responsive desing, and HTML structure
 * [Valeria Lopez](https://github.com/valopezs) - HTML and Skeleton framework
 * [Valeria Gonzalez](https://github.com/ValPal1320) CSS and responsive design
-* [Ashonti Madison](https://github.com/ValPal1320) HTML, and CSS
+* [Ashonti Madison](https://github.com/ASHONTIMAD) HTML, and CSS
 
 # A message from the creators
 
