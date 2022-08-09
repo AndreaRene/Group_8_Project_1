@@ -65,7 +65,13 @@ h2 {
 }
 
 #searchBtns {
-    justify-content: center;
+    justify-content: space-between;
+}
+
+#fetchBtn, #randomFetchBtn {
+    margin: .2rem;
+    max-width: 15rem;
+   
 }
 
 /* Recipe content */
@@ -78,11 +84,13 @@ h2 {
 }
 
 #recipe {
-    background-color: var(--cornsilk);
-    min-height: 50rem;
+    background-color: var(--kombuGreen);
+    color: var(--earthYellow);
+    min-height: 10rem;
     width: 30rem;
     border-radius: .5rem;
-    border: .7rem solid var(--kombuGreen);
+    border: .7rem solid var(--cornsilk);
+    padding: 20px;
 }
 
 #cocktailImg {
@@ -145,6 +153,10 @@ h2 {
     justify-content: center;
 }
 
+.myBtns:focus {
+    color: var(--earthYellow);
+}
+
 /* we don't need this since we're not using materialize anymore */
 
 .greenBtns:hover {
@@ -157,11 +169,16 @@ h2 {
 
 .red {
     background-color: rgb(142, 23, 23);
+    color: var(--cornsilk);
 }
 
 .green {
     background-color: rgb(32, 86, 32);
+    color: var(--cornsilk);
+}
 
+.green:focus, .red:focus {
+    color: var(--cornsilk);
 }
 
 /* Screen size responsiveness */
@@ -193,7 +210,7 @@ h2 {
     }
 } */
 
-@media (max-width: 375px) {
+@media (max-width: 576px) {
 
     #pageHeader {
         display: block;
