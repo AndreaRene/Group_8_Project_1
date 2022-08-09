@@ -24,7 +24,6 @@ body {
 /* end of universal selectors */
 
 
-
 /* Header styling */
 #pageHeader {
     display: flex;
@@ -47,8 +46,6 @@ h2 {
 }
 
 /* Search styling */
-
-
 #searchSection {
     flex-direction: column;
 }
@@ -66,7 +63,8 @@ h2 {
 }
 
 #searchBtns {
-    justify-content: space-between;
+    display: flex;
+    justify-content: center;
 }
 
 #fetchBtn, #randomFetchBtn {
@@ -104,10 +102,6 @@ h2 {
 }
 
 /* History content */
-#history {
-    min-height: 5rem;
-}
-
 .cocktailBtns {
     background-color: var(--cornsilk);
     border: .2rem solid var(--kombuGreen);
@@ -123,7 +117,7 @@ h2 {
 
 #triviaA {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .answerBtns {
@@ -131,6 +125,13 @@ h2 {
     overflow-wrap: normal;
     background-color: var(--cornsilk);
     border: .2rem solid var(--kombuGreen);
+}
+
+#searchHistorySection, #triviaSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 40rem;
 }
 
 /* Footer styling */
