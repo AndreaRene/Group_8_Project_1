@@ -62,6 +62,7 @@ h2 {
 #formSide1,
 #formSide2 {
     text-align: center;
+
 }
 
 #searchBtns {
@@ -104,17 +105,20 @@ h2 {
 
 /* History content */
 #history {
-    background-color: var(--cornsilk);
-    border: .7rem solid var(--kombuGreen);
     min-height: 5rem;
 }
 
-/* Trivia section */
-#trivia {
+.cocktailBtns {
     background-color: var(--cornsilk);
-    min-height: 5rem;
+    border: .2rem solid var(--kombuGreen);
+}
+
+/* Trivia section */
+#trivia, #searchTitle{
+    font-weight: bold;
+    font-size: 20px;
     text-align: center;
-    border: .7rem solid var(--kombuGreen);
+    color: var(--cornsilk);
 }
 
 #triviaA {
@@ -125,6 +129,8 @@ h2 {
 .answerBtns {
     min-width: 45%;
     overflow-wrap: normal;
+    background-color: var(--cornsilk);
+    border: .2rem solid var(--kombuGreen);
 }
 
 /* Footer styling */
