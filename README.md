@@ -4,7 +4,7 @@ This application is a recipe finder for cocktails with which the user can search
 
 There is also a fun trivia section all about drinks that the user can play with while they are mixing/drinking their cocktails.
 
-  You can find the application [here](https://andrearene.github.io/Group_8_Project_1/) It was designed it to meet the following criteria:
+  You can find the application [here](https://andrearene.github.io/Trivia_on_the_rocks/) It was designed it to meet the following criteria:
 
 * A fun app that allows a use to find recipes for cocktails 
 * A way for the user to get a random cocktail to try
