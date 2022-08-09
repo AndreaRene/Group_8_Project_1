@@ -29,18 +29,19 @@ There is also a fun trivia section all about drinks that the user can play with 
 * [The Noun Project](https://thenounproject.com/): A comprehensive icon collection. 
 
 
-[Here]() is our original design ideas wireframe.
+[Here](https://github.com/AndreaRene/Group_8_Project_1/blob/main/imgs/wireframe_v_2.PNG) is our original design ideas wireframe.
 
 ## Deployed application on an actual mobile device:
 ![screen capture of our app on a mobile device]()
 
 ## Colaborators
 
-* [Andrea Rene](https://github.com/AndreaRene)
-* [Valeria Lopez](https://github.com/valopezs)
-* [Valeria Gonzalez](https://github.com/ValPal1320)
-* [Ashonti Madison](https://github.com/ValPal1320)
-* [Prina Selvakumar](https://github.com/prinaselvakumar)
+While we all worked together on design creation, wireframing, and project management, we each also had these specific tasks:
+
+* [Andrea Rene](https://github.com/AndreaRene) - Javascript, API handling, css, responsive desing, and HTML structure
+* [Valeria Lopez](https://github.com/valopezs) - HTML and Skeleton framework
+* [Valeria Gonzalez](https://github.com/ValPal1320) CSS and responsive design
+* [Ashonti Madison](https://github.com/ValPal1320) HTML, and CSS
 
 # A message from the creators
 
