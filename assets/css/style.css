@@ -66,6 +66,7 @@ body {
 
 #searchForm {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
 }
@@ -144,12 +145,15 @@ body {
     color: var(--cornsilk);
     border-top: var(--orangeDashed);
     border-bottom: var(--orangeDashed);
+    max-height: 15rem;
+    overflow-y: scroll;
 }
 
 /* search history content */
 
 #bottomRow {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
 }
 
@@ -204,6 +208,11 @@ body {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
+#triviaBtn,
+#clearBtn {
+    width: 90%;
+}
+
 .greenBtns {
     background-color: var(--kombuGreen);
     color: var(--earthYellow);
@@ -252,27 +261,200 @@ body {
 
 /* end of footer section */
 
+/* end of footer */
+
+/* scrollbar */
+
+::-webkit-scrollbar {
+    width: .5rem;
+    background: var(--kombuGreen);
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px var(--kombuGreen);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--kombuGreen);
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px var(--liverDogs);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--liverDogs);
+}
+
+/* end of scrollbar */
+
 /* media queries */
 
-@media (max-width: 1305px) {
 
-    #triviaA {
-        display: block;
+@media (max-width: 1399px) {
+
+    #cocktailMsg {
+        font-size: 4rem;
+    }
+
+    #pageMain {
+        padding: 1rem 10rem;
+    }
+
+    #appInfo {
+        font-size: 2.5rem;
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 1199px) {
+
+    #pageMain {
+        padding: 1rem 5rem;
+    }
+
+    #recipe,
+    #cocktailImg {
+        min-height: 15rem;
+    }
+
+    #recipeName {
+        font-size: 2.5rem;
+    }
+
+    #formSide1,
+    #formSdie2,
+    #recipe,
+    #cocktailImg,
+    #searchHistorySection,
+    #triviaSection {
+        width: 30rem;
+    }
+}
+
+@media (max-width: 991px) {
+    #cocktailMsg {
+        font-size: 3rem;
+    }
+
+    #pageMain {
+        padding: 1rem 5rem;
+    }
+
+    #appInfo {
+        font-size: 2rem;
+    }
+
+    #recipe,
+    #cocktailImg {
+        min-height: 20rem;
+    }
+
+    /* #formSide1,
+    #formSdie2, */
+    #recipe,
+    #cocktailImg,
+    #searchHistorySection,
+    #triviaSection {
+        width: 25rem;
+    }
+
+    .cocktailBtns,
+    .answerBtns,
+    #triviaBtn,
+    #clearBtn {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 767px) {
+    #cocktailMsg {
+        font-size: 2.3rem;
+    }
+
+    #pageMain {
+        padding: 1rem .2rem;
+    }
+
+    #appInfo {
+        display: none;
+    }
+
+    #formSide1,
+    #formSide2 {
+        font-size: 2rem;
+        width: 20rem;
+    }
+
+    #searchBtns {
+        flex-direction: column;
+        margin: auto;
+    }
+
+    #recipe,
+    #cocktailImg {
+        min-height: 10rem;
+    }
+
+    #ingredients {
+        max-height: 10rem;
+        font-size: 1.4rem;
+        overflow-y: scroll;
+    }
+
+    #recipe,
+    #cocktailImg,
+    #searchHistorySection,
+    #triviaSection {
+        width: 21rem;
+    }
+
+    .cocktailBtns,
+    .answerBtns,
+    #triviaBtn,
+    #clearBtn {
+        font-size: .9rem;
+    }
+
+}
+
+@media (max-width: 575px) {
 
     #pageHeader {
-        display: block;
-        text-align: center;
+        justify-content: center;
     }
 
     #cocktailMsg {
         display: none;
     }
 
-    #triviaA {
-        display: block;
+    #searchForm {
+        flex-direction: column;
+    }
+
+    #formSide1,
+    #formSide2 {
+        text-align: center;
+    }
+
+    #recipeSection,
+    #bottomRow {
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+
+    #triviaSection,
+    #searchHistorySection {
+        margin: auto;
+        min-height: 5rem;
+    }
+
+    #recipe,
+    #searchHistorySection,
+    #triviaSection {
+        width: 70%;
+    }
+
+    #cocktailImg {
+        display: none;
     }
 }
