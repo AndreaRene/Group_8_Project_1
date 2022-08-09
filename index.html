@@ -10,25 +10,48 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
         integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- <link rel="stylesheet" href="assets/css/reset.css" /> -->
     <link rel="stylesheet" href="assets/css/style.css" />
-    <title>Let's get buzzy!</title>
+    <title>Trivia on the rocks.</title>
+    <!-- TODO: Smile. You are enough. -->
 </head>
 
 <body>
     <header id="pageHeader">
         <img src="assets/imgs/noun-martini-1113386-283618.svg" alt="martini glass with olive icon" id="martiniIcon"
             width="100px" height="80px">
-        <h1 id="cocktailMsg">Find the perfect cocktail for yourself or your party.</h1>
+        <h1 id="cocktailMsg">Trivia on the rocks.<span></span></h1>
     </header>
+    <div id="cocktailBanner">
+        <img class="bannerImg" src="assets/imgs/noun-cocktail-1075452-FB8500.svg" alt=""><img class="bannerImg"
+            src="assets/imgs/noun-cocktail-1531741-FB8500.svg" alt=""><img class="bannerImg"
+            src="assets/imgs/noun-cocktail-2385714-FB8500.svg" alt=""><img class="bannerImg"
+            src="assets/imgs/noun-cocktail-5054331-FB8500.svg" alt=""><img class="bannerImg"
+            src="assets/imgs/noun-cocktails-1007976-FB8500.svg" alt=""><img class="bannerImg"
+            src="assets/imgs/noun-drink-on-the-rocks-1245573-FB8500.svg" alt=""><img class="bannerImg"
+            src="assets/imgs/noun-cocktail-1075452-FB8500.svg" alt=""><img class="bannerImg"
+            src="assets/imgs/noun-cocktail-1531741-FB8500.svg" alt=""><img class="bannerImg"
+            src="assets/imgs/noun-cocktail-2385714-FB8500.svg" alt=""><img class="bannerImg"
+            src="assets/imgs/noun-cocktail-5054331-FB8500.svg" alt=""><img class="bannerImg"
+            src="assets/imgs/noun-cocktails-1007976-FB8500.svg" alt=""><img class="bannerImg"
+            src="assets/imgs/noun-drink-on-the-rocks-1245573-FB8500.svg" alt=""><img class="bannerImg"
+            src="assets/imgs/noun-cocktail-1075452-FB8500.svg" alt=""><img class="bannerImg"
+            src="assets/imgs/noun-cocktail-1531741-FB8500.svg" alt=""><img class="bannerImg"
+            src="assets/imgs/noun-cocktail-2385714-FB8500.svg" alt=""><img class="bannerImg"
+            src="assets/imgs/noun-cocktail-5054331-FB8500.svg" alt=""><img class="bannerImg"
+            src="assets/imgs/noun-cocktails-1007976-FB8500.svg" alt=""><img class="bannerImg"
+            src="assets/imgs/noun-drink-on-the-rocks-1245573-FB8500.svg" alt=""> <img class="bannerImg"
+            src="assets/imgs/noun-cocktail-1075452-FB8500.svg" alt=""><img class="bannerImg"
+            src="assets/imgs/noun-cocktail-1531741-FB8500.svg" alt=""><img class="bannerImg"
+            src="assets/imgs/noun-cocktail-2385714-FB8500.svg" alt=""><img class="bannerImg"
+            src="assets/imgs/noun-cocktail-5054331-FB8500.svg" alt=""><img class="bannerImg"
+            src="assets/imgs/noun-cocktails-1007976-FB8500.svg" alt="">
 
+    </div>
     <main id="pageMain">
-        <section class="row" id="searchSection">
-            <h2 class="column">Begin your search for the perfect cocktail here!</h2>
-            <p id="errorMsg"></p>
-            <form class="column row" id="searchForm">
-                <div class="six columns" id="formSide1">
-                    <label for="searchCriteria">Search by:</label>
+        <section class="" id="searchSection">
+            <form class=" " id="searchForm">
+                <div class="" id="formSide1">
+                    <label for="searchCriteria" id="searchBy">Search by:</label>
 
                     <select id="searchCriteria" name="searchCriteria">
                         <option value="name">Cocktail Name</option>
@@ -37,13 +60,13 @@
 
                     <input type="text" id="drinkSearch" placeholder="Search..">
 
-                    <div class="row" id="searchBtns">
-                        <button class="six columns myBtns greenBtns" id="fetchBtn">Buzz</button>
-                        <button class="six columns myBtns greenBtns" id="randomFetchBtn">Random Cocktail</button>
+                    <div class="" id="searchBtns">
+                        <button class="  myBtns greenBtns" id="fetchBtn">Find my Cocktail</button>
+                        <button class="  myBtns greenBtns" id="randomFetchBtn">Cocktail Roulette</button>
                     </div>
                 </div>
-                <div class="six columns" id="formSide2">
-                    <label for="recipeList">Search Results:</label>
+                <div class="" id="formSide2">
+                    <label for="recipeList" id="searchRes">Search Results:</label>
                     <select id="recipeList" name="recipeList">
                         <option>Select a Recipe
                         </option>
@@ -51,7 +74,7 @@
                         <!-- options list will be dynamically generated -->
 
                     </select>
-                    <button class="myBtns greenBtns" id="recipeBtn">Get this Recipe!</button>
+                    <button class="myBtns greenBtns" id="recipeBtn">Get Recipe!</button>
                 </div>
             </form>
         </section>
@@ -61,6 +84,9 @@
                 <h2 id="recipeName">
                     <!-- recipe name will be dynamically generated -->
                 </h2>
+                <p id="alcoholic">
+                    <!-- alcoholic/non alcoholic data dynamically generated -->
+                </p>
                 <ul id="ingredients">
                     <!-- ingredients list will be dynamically generated -->
                 </ul>
@@ -68,27 +94,27 @@
                     <!-- instructions will be dynamically generated -->
                 </p>
             </div>
-            <img src="" id="cocktailImg">
+            <img src="assets/imgs/noun-drink-on-the-rocks-1245573-FB8500.svg" id="cocktailImg">
         </section>
 
-        <div class="row">
-            <div class="six columns" id="history">
+        <div id="bottomRow">
+            <div class=" " id="history">
                 <section id="searchHistorySection">
-                <p id="searchTitle">Search History</p>
-                <div id="recentSearches">
-                    <!-- buttons will be dynamically generated -->
-                </div>
-                <button class="myBtns greenBtns" id="clearBtn">Clear History</button>
+                    <p id="searchTitle">Search History</p>
+                    <div id="recentSearches">
+                        <!-- buttons will be dynamically generated -->
+                    </div>
+                    <button class="myBtns greenBtns" id="clearBtn">Clear History</button>
                 </section>
             </div>
 
-            <div class="six columns" id="trivia">
+            <div class=" " id="trivia">
                 <section id="triviaSection">
                     <p id="triviaQ">
-                            <!-- questions will be dynamically generated -->
+                        <!-- questions will be dynamically generated -->
                     </p>
                     <div id="triviaA">
-                            <!-- answer buttons will be dynamically generated -->
+                        <!-- answer buttons will be dynamically generated -->
                     </div>
                     <button class="myBtns greenBtns" id="triviaBtn"> Get another Trivia Question! </button>
                 </section>
