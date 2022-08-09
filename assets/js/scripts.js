@@ -246,4 +246,5 @@ $("#triviaBtn").click(searchHandler);
 $("#clearBtn").click(clearStorage);
 $("#recentSearches").on("click", "button", searchHandler);
 makeCocktailBtns();
+randomCocktail();
 trivia();

@@ -7,6 +7,7 @@
     --cornsilk: #fefae0;
     --earthYellow: #dda15e;
     --liverDogs: #bc6c25;
+    --orangeDashed: 1px dashed var(--liverDogs);
 }
 
 * {
@@ -15,10 +16,8 @@
 }
 
 body {
-    /* padding: 0; */
-    width: 100%;
-    overflow-x: hidden;
     background-color: var(--darkOlive);
+    color: var(--kombuGreen);
 }
 
 /* end of universal selectors */
@@ -35,30 +34,36 @@ body {
 
 #cocktailMsg {
     text-align: right;
+    padding-top: 20px;
+}
+
+#pageMain {
+    padding: 1rem 12rem;
 }
 
 h2 {
     text-align: center;
 }
 
-#cocktailMsg {
-    padding-top: 20px;
-}
-
 /* Search styling */
 #searchSection {
+    display: flex;
     flex-direction: column;
 }
 
 #searchForm {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
 }
 
 #formSide1,
 #formSide2 {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-size: 3rem;
+    width: 30rem;
 
 }
 
@@ -67,10 +72,17 @@ h2 {
     justify-content: center;
 }
 
-#fetchBtn, #randomFetchBtn {
+#fetchBtn,
+#randomFetchBtn {
     margin: .2rem;
     max-width: 15rem;
-   
+
+}
+
+#searchCriteria,
+#drinkSearch,
+#recipeList {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 /* Recipe content */
@@ -83,32 +95,56 @@ h2 {
 }
 
 #recipe {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     background-color: var(--kombuGreen);
     color: var(--earthYellow);
-    min-height: 10rem;
+    min-height: 30rem;
     width: 30rem;
     border-radius: .5rem;
     border: .7rem solid var(--cornsilk);
     padding: 20px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+#recipeName {
+    font-size: 3rem;
+    color: var(--cornsilk);
+    border-bottom: var(--orangeDashed);
+    border-top: var(--orangeDashed);
+}
+
+#ingredients {
+    line-height: 1rem;
+}
+
+#instructions {
+    color: var(--cornsilk);
+    border-top: var(--orangeDashed);
+    border-bottom: var(--orangeDashed);
 }
 
 #cocktailImg {
     background-color: var(--kombuGreen);
-    width: 30rem;
+    width: 35rem;
     height: auto;
     min-height: 30rem;
     border-radius: .5rem;
     border: .7rem solid var(--kombuGreen);
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 /* History content */
-.cocktailBtns {
-    background-color: var(--cornsilk);
-    border: .2rem solid var(--kombuGreen);
+#bottomRow {
+    display: flex;
+    justify-content: space-around;
 }
 
+
 /* Trivia section */
-#trivia, #searchTitle{
+#triviaQ,
+#searchTitle {
     font-weight: bold;
     font-size: 20px;
     text-align: center;
@@ -120,24 +156,29 @@ h2 {
     flex-direction: column;
 }
 
-.answerBtns {
-    min-width: 45%;
+.answerBtns,
+.cocktailBtns {
+    width: 90%;
     overflow-wrap: normal;
     background-color: var(--cornsilk);
     border: .2rem solid var(--kombuGreen);
 }
 
-#searchHistorySection, #triviaSection {
+#searchHistorySection,
+#triviaSection {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     min-height: 40rem;
+    width: 30rem;
+    padding: 20px;
 }
 
 /* Footer styling */
 #pageFooter {
     background-color: var(--liverDogs);
     margin-top: 40px;
+    padding: 2rem;
 }
 
 #footerMsg1,
@@ -153,11 +194,15 @@ h2 {
 }
 
 .myBtns {
-    margin: 0 auto;
-    margin-bottom: 10px;
+    margin: 0 auto 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.myBtns:active {
+    transform: translate(2px, 2px);
 }
 
 .myBtns:focus {
@@ -184,7 +229,8 @@ h2 {
     color: var(--cornsilk);
 }
 
-.green:focus, .red:focus {
+.green:focus,
+.red:focus {
     color: var(--cornsilk);
 }
 
