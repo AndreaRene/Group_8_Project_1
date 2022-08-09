@@ -18,6 +18,7 @@
 body {
     background-color: var(--darkOlive);
     color: var(--kombuGreen);
+    overflow-x: hidden;
 }
 
 /* end of universal selectors */
@@ -57,6 +58,19 @@ body {
     font-size: 3rem;
 }
 
+/* top banner */
+#cocktailBanner {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    justify-content: space-evenly;
+    padding-top: .5rem;
+}
+
+.bannerImg {
+    width: 4rem;
+}
+
 /* search form */
 
 #searchSection {
@@ -86,10 +100,13 @@ body {
     justify-content: center;
 }
 
+/* TODO BUTTONS HERE */
+
+
 #fetchBtn,
 #randomFetchBtn {
     margin: .2rem;
-    max-width: 15rem;
+    max-width: 15REM;
 
 }
 
@@ -385,11 +402,6 @@ body {
         width: 20rem;
     }
 
-    #searchBtns {
-        flex-direction: column;
-        margin: auto;
-    }
-
     #recipe,
     #cocktailImg {
         min-height: 10rem;
@@ -429,11 +441,24 @@ body {
 
     #searchForm {
         flex-direction: column;
+        margin-top: 2rem;
     }
 
-    #formSide1,
+
     #formSide2 {
-        text-align: center;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 1.5rem;
+
+    }
+
+    #recipeBtn {
+        margin-left: 1rem;
+    }
+
+    #searchBy,
+    #searchRes {
+        display: none;
     }
 
     #recipeSection,
@@ -455,6 +480,11 @@ body {
     }
 
     #cocktailImg {
-        display: none;
+        width: auto;
+        height: 20rem;
+        padding: 0;
+        border-radius: 50%;
+        margin-bottom: 3rem;
+        border: 3px solid var(--kombuGreen)
     }
 }
