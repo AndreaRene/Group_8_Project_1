@@ -20,17 +20,6 @@
         <img src="assets/imgs/noun-martini-1113386-283618.svg" alt="martini glass with olive icon" id="martiniIcon"
             width="100px" height="80px">
         <h1 id="cocktailMsg">Find the perfect cocktail for yourself or your party.</h1>
-
-        <!-- DELETION SUGGESTION: NAV
-            || Do we need a nav section? || -->
-
-        <!-- <nav>
-            <ul>
-                <li><a href="#search">Cocktail Search</a></li>
-                <li><a href="#learn">Learn</a></li>
-                <li><a href="#history">History</a></li>
-            </ul>
-        </nav> -->
     </header>
 
     <main id="pageMain">
@@ -66,17 +55,6 @@
                 </div>
             </form>
         </section>
-        <!-- DELETION SUGGESTION: RECENT SEARCHES
-            this will go at the bottom and the buttons in the div will be dynamically generated -->
-
-        <!-- <h3>Recent Searches:</h3>
-            <ul>
-                <li>stored result 1</li>
-                <li>stored result 2</li>
-                <li>stored result 3</li>
-                <li>stored result 4</li>
-                <li>stored result 5</li>
-            </ul> -->
 
         <section id="recipeSection">
             <div id="recipe">
@@ -95,7 +73,7 @@
 
         <div class="row">
             <div class="six columns" id="history">
-                <section id="searchHistorySection"></section>
+                <section id="searchHistorySection">
                 <p id="searchTitle">Search History</p>
                 <div id="recentSearches">
                     <!-- buttons will be dynamically generated -->
@@ -106,17 +84,13 @@
 
             <div class="six columns" id="trivia">
                 <section id="triviaSection">
-
-
-                    <div id="triviaQandA">
-                        <p id="triviaQ">
+                    <p id="triviaQ">
                             <!-- questions will be dynamically generated -->
-                        </p>
-                        <div id="triviaA">
+                    </p>
+                    <div id="triviaA">
                             <!-- answer buttons will be dynamically generated -->
-                        </div>
-                        <button class="myBtns greenBtns" id="triviaBtn"> Get another Trivia Question! </button>
                     </div>
+                    <button class="myBtns greenBtns" id="triviaBtn"> Get another Trivia Question! </button>
                 </section>
             </div>
         </div>
