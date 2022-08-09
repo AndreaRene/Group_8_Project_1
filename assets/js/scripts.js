@@ -36,14 +36,14 @@ function searchRecipes(event) {
     clearRecipeSection()
     let drinkName = $("#drinkSearch").val();
     if (!drinkName) {
-        $("#ingredients").text("Oops! We couldn't find any results for that. Please try a different search term.");
+        $("#ingredients").text("Oops! We couldn't find any results for that. Please try a different search term. Be sure to use the correct selector in the dropdown menu if you are searching by cocktail name or ingredient.");
     };
     fetch(getCocktail + drinkName)
         .then((response) => {
             return response.json();
         }).then((data) => {
             if (!data.drinks) {
-                $("#ingredients").text("Oops! We couldn't find any results for that. Please try a different search term.");
+                $("#ingredients").text("Oops! We couldn't find any results for that. Please try a different search term. Be sure to use the correct selector in the dropdown menu if you are searching by cocktail name or ingredient.");
             } else if (data.drinks.length === 1) {
                 displayRecipe(data);
                 storeCocktail(event);
@@ -58,14 +58,14 @@ function searchRecipes(event) {
 function searchIngredients() {
     clearRecipeSection();
     if (!$("#drinkSearch").val()) {
-        $("#ingredients").text("Oops! We couldn't find any results for that. Please try a different search term.");
+        $("#ingredients").text("Oops! We couldn't find any results for that. Please try a different search term. Be sure to use the correct selector in the dropdown menu if you are searching by cocktail name or ingredient.");
     }
     fetch(ingredientSearch + $("#drinkSearch").val())
         .then((response) => {
             return response.json();
         }).then((data) => {
             if (!data.ingredients) {
-                $("#ingredients").text("Oops! We couldn't find any results for that. Please try a different search term.");
+                $("#ingredients").text("Oops! We couldn't find any results for that. Please try a different search term. Be sure to use the correct selector in the dropdown menu if you are searching by cocktail name or ingredient.");
             } else {
                 fetch(getIngredient + data.ingredients[0].strIngredient)
                     .then((response) => {
@@ -111,7 +111,7 @@ function populateDropdown(data) {
 
     clearRecipeSection();
     if ($("#drinkSearch").val() === "") {
-        $("#ingredients").text("Oops! We couldn't find any results for that. Please try a different search term.");
+        $("#ingredients").text("Oops! We couldn't find any results for that. Please try a different search term. Be sure to use the correct selector in the dropdown menu if you are searching by cocktail name or ingredient.");
         return;
     } else {
         $("#ingredients").text("There are " + data.drinks.length + " results for " + $("#drinkSearch").val() + ". Please select an option from the list on the right.");
