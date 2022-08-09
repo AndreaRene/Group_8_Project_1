@@ -6,10 +6,10 @@ There is also a fun trivia section all about drinks that the user can play with 
 
   You can find the application [here]() It was designed it to meet the following criteria:
 
-* 
-* 
-* 
-*  
+* A fun app that allows a use to find recipes for cocktails 
+* A way for the user to get a random cocktail to try
+* A trivia section where all of the questions are related to drinks and alcohol
+*  An app that stores recent searches
 * A way for the user to clear the search history if desired.
 * An interface that is intuitive for users 
 * An application that is easily scaleable and expandable
@@ -32,7 +32,7 @@ There is also a fun trivia section all about drinks that the user can play with 
 [Here]() is our original design ideas wireframe.
 
 ## Deployed application on an actual mobile device:
-![screen capture of my app aon a mobile device]()
+![screen capture of our app on a mobile device]()
 
 ## Colaborators
 
@@ -41,3 +41,9 @@ There is also a fun trivia section all about drinks that the user can play with 
 * [Valeria Gonzalez](https://github.com/ValPal1320)
 * [Ashonti Madison](https://github.com/ValPal1320)
 * [Prina Selvakumar](https://github.com/prinaselvakumar)
+
+# A message from the creators
+
+Please enjoy the app and understand that it is for entertainment purposes. Please remember to drink responsibly and, of course, have fun!
+
+Happy Mixing!
