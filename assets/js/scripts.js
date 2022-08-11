@@ -100,10 +100,15 @@ function getRecipe(event) {
         .then((response) => {
             return response.json();
         }).then((data) => {
-            displayRecipe(data);
-            storeCocktail(event);
+            if (!data.drinks) {
+                $("#ingredients").text("Oops! We couldn't find any results for that. Please try a different search term. Be sure to use the correct selector in the dropdown menu if you are searching by cocktail name or ingredient.");
+                return;
+            } else {
+                displayRecipe(data);
+                storeCocktail(event);
+            };
         });
-}
+};
 
 function populateDropdown(data) {
 
