@@ -104,8 +104,8 @@ function getRecipe(event) {
                 $("#ingredients").text("Oops! We couldn't find any results for that. Please try a different search term. Be sure to use the correct selector in the dropdown menu if you are searching by cocktail name or ingredient.");
                 return;
             } else {
-                displayRecipe(data);
                 storeCocktail(event);
+                displayRecipe(data);
             };
         });
 };
@@ -145,15 +145,23 @@ function randomCocktail() {
 // store recent searches in local storage
 
 function storeCocktail(event) {
-    if (cocktailArray.some(function (el) {
-        return el === $("#drinkSearch").val();
-    })) {
-        return;
-    };
+
     if (event.target.matches("#recipeBtn")) {
-        cocktailArray.push($("#recipeList").val());
+        if (cocktailArray.some(function (el) {
+            return el === $("#recipeList").val();
+        })) {
+            return;
+        } else {
+            cocktailArray.push($("#recipeList").val());
+        };
     } else {
-        cocktailArray.push($("#drinkSearch").val());
+        if (cocktailArray.some(function (el) {
+            return el === $("#drinkSearch").val();
+        })) {
+            return;
+        } else {
+            cocktailArray.push($("#drinkSearch").val());
+        };
     };
     localStorage.setItem("cocktail", JSON.stringify(cocktailArray));
     makeCocktailBtns();
@@ -242,7 +250,7 @@ function makeAnswerBtns(data) {
 
 function clearStorage() {
     localStorage.clear();
-    $("#recentSearches").empty();
+    location.reload();
 };
 
 // on load and click events
